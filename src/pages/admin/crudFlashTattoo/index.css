@@ -1,0 +1,437 @@
+
+.CrudFlashtattoo-container h3 {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    
+}
+
+.CrudFlashtattoo-container h2 {
+    margin-bottom: 2%;
+    margin-top: 5%;
+}
+
+#info-CrudFlashtattoo {
+    background-color: var(--var-forms-background);
+    width: 80%;
+    padding: 20%;
+    text-align: justify;
+    align-self: center;
+    border-radius: 10px;
+    margin-bottom: 3%;
+}
+
+#info-CrudFlashtattoo p {
+    opacity: 0.7;
+}
+
+.CrudFlashtattoo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 16px;
+    padding-left: 20%;
+}
+
+.CrudFlashtattoo img {
+        max-width: 80%;
+        height: auto;
+        padding: 16px;
+        border: 1px solid #eee;
+    }
+
+#img-port{
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#img-port:hover{
+    transform: scale(1.1);
+}
+
+
+#modal-container-CrudFlashtattoo
+{
+    width: 50%;
+}
+
+.modal-port.CrudFlashtattoo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal-info-CrudFlashtattoo {
+    display: flex;
+    margin-top: 5%;
+}
+
+.modal-info-description {
+    width: 100%;
+    max-width: 300px;
+
+}
+#modal-info-tatto{
+    display: flex;
+    margin-top: 5%;   
+}
+
+#modal-add-tatto{
+    display: flex;
+    margin-top: 5%;
+}
+
+#modal-edit-tatto{
+    display: flex;
+    margin-top: 5%;   
+}
+
+.btn-modal{
+    display: flex;
+    padding-inline: 20%;
+    justify-content:space-between;
+    align-items: first baseline;
+    
+}
+
+.inputp{
+    margin-top: 10px;
+    width: 100%;
+
+}
+
+.inputp {
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #262626;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50%;
+    height: 50px;
+    color: white;
+
+}
+#imageInputp{
+    margin-top: 50%;
+}
+
+.modal-info-description-CrudFlashtattoo .h3,
+.modal-info-description-CrudFlashtattoo .description {
+    padding: 20px;
+    background-color: #1d1d1d;
+    margin-left: 15%;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 2%;
+}
+
+
+.modal-info-description-CrudFlashtattoo .description h3 {
+    margin-bottom: 12%;
+}
+
+.modal-info-description-CrudFlashtattoo .description p {
+    margin-top: 3%;
+    font-size: 0.9rem;
+}
+
+#modal-info-CrudFlashtattoo img {
+    width: 45%;
+}
+
+.modal-close-button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    float: right;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.modal-info-CrudFlashtattoo-description {
+    width: 100%;
+    max-width: 280px;
+}
+
+.modal-info-CrudFlashtattoo-description .h3,
+.modal-info-CrudFlashtattoo-description .description {
+    padding: 30px;
+    background-color: #1d1d1d;
+    margin-left: 15%;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 2%;
+}
+
+.modal-info-CrudFlashtattoo-description .description h3 {
+    margin-bottom: 12%;
+}
+
+.modal-info-CrudFlashtattoo-description .description p {
+    margin-top: 3%;
+    font-size: 0.9rem;
+}
+
+.tamanho-info {
+    text-align: center;
+    width: 100%;
+}
+
+.tamanho-info h3 {
+    padding: 20px;
+    background-color: #1d1d1d;
+    border-radius: 5px;
+    margin-top: 2%;
+    width: 50%;
+    margin: 5% 25%;
+    align-self: center;
+}
+
+.valores-tattoo {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.valores-tattoo .btn-valor {
+    background-color: #1d1d1d;
+    width: 60px;
+    height: 40px;
+    padding: 2px;
+    margin-bottom: 15%;
+}
+
+.valores-tattoo .btn-valor:hover {
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+
+/* Estilos para tablets */
+@media (max-width: 1124px) {
+    .CrudFlashtattoo {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #modal-container-CrudFlashtattoo{
+        width: 70%;
+        margin-left: 5%; 
+    }
+    #modal-edit-CrudFlashtattoo{
+            width: 70%;
+            margin-left: 5%;
+    }
+    #modal-add-CrudFlashtattoo{
+        width: 70%;
+        margin-left: 5%;
+    }
+}
+
+
+@media (max-width: 875px) {
+    .CrudFlashtattoo {
+        grid-template-columns: repeat(2, 1fr);
+        padding-left: 30%;
+    }
+    #modal-container-CrudFlashtattoo{
+        width: 72%;
+        margin-left: 5%;
+    }
+    #modal-edit-CrudFlashtattoo{
+        width: 72%;
+        margin-left: 5%;
+    }
+    #modal-add-CrudFlashtattoo{
+        width: 72%;
+        margin-left: 5%;
+    }
+
+}
+
+@media (max-width: 800px) {
+
+
+    .valores-port.CrudFlashtattoo {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .valores-port.CrudFlashtattoo p{
+    
+        font-size: 0.9rem;
+    }
+    
+
+}
+
+/*Estilo para mobile*/
+@media (max-width: 768px) {
+    .CrudFlashtattoo-container h3 {
+        font-size: 0.9rem;
+    }
+    .CrudFlashtattoo {
+        grid-template-columns: repeat(2, 1fr);
+        padding-left: 28%;
+    }
+
+    .CrudFlashtattoo {
+        margin-bottom: 16px;
+    }
+
+    .modal-port.CrudFlashtattoo {
+        flex-direction: column;
+    }
+
+    #modal-info-CrudFlashtattoo img {
+        width: 100%;
+    }
+
+    .valores-port.CrudFlashtattoo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .valores-port.CrudFlashtattoo .btn-valor {
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 675px) {
+    .CrudFlashtattoo {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10%;
+    }
+    #modal-container-CrudFlashtattoo{
+        height: 70% !important;
+    }
+    #modal-edit-CrudFlashtattoo{
+        height: 70%;
+    }
+    #modal-add-CrudFlashtattoo{
+        height: 70%;
+    }
+    .p-info{
+        width: 70%;
+        font-size: 0.8rem;
+        text-align: center;
+        margin-bottom: 10%;
+        align-self: center;
+    }
+    #info-CrudFlashtattoo {
+       margin-bottom: 10%;
+       margin-top: 10%;
+    }
+    
+    #info-CrudFlashtattoo p {
+        font-size: 0.8rem;
+        
+    }
+    .h2-info{
+        font-size: 1.5rem;
+        margin-top: 10%;
+    }
+    
+    #modal-container-CrudFlashtattoo {
+        width:60%;
+        margin-left: 13%;
+    }
+    #modal-edit-CrudFlashtattoo {
+        width:60%;
+        margin-left: 13%;
+    }
+    #modal-add-CrudFlashtattoo {
+        width:60%;
+        margin-left: 13%;
+    }
+
+    .modal-port.CrudFlashtattoo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #modal-info-CrudFlashtattoo {
+        display: flex;
+        flex-direction: column;
+        margin-top: 5%;
+    }
+
+    #modal-info-CrudFlashtattoo img {
+        width: 100%;
+    }
+
+    .modal-close-button {
+        font-size: 1.5rem;
+    }
+
+    .modal-info-CrudFlashtattoo-description {
+        width: 100%;
+        
+    }
+
+    .modal-info-CrudFlashtattoo-description .h3,
+    .modal-info-CrudFlashtattoo-description .description {
+        padding: 10px;
+        margin-left: 0%;
+        margin-top: 2%;
+        font-size: 0.8rem;
+    }
+
+    .modal-info-CrudFlashtattoo-description .description h3 {
+        margin-bottom: 12%;
+        font-size: 0.8rem;
+    }
+
+    .modal-info-CrudFlashtattoo-description .description p {
+        margin-top: 3%;
+        font-size: 0.8rem;
+    }
+
+    .tamanho-info {
+        text-align: center;
+        width: 100%;
+    }
+
+    .tamanho-info h3 {
+        padding: 10px;
+        margin-top: 2%;
+        width: 100%;
+        margin: 5% 0%;
+        font-size: 0.8rem;
+    }
+
+    .valores-port.CrudFlashtattoo {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .valores-port.CrudFlashtattoo .btn-valor {
+        width: 80%;
+        font-size: 0.9rem;
+    }
+
+    
+    .valores-port.CrudFlashtattoo p{
+       
+        font-size: 0.9rem;
+    }
+    
+    .btn-modal{
+    width: 150%;
+    flex-direction: column;    
+}
+}

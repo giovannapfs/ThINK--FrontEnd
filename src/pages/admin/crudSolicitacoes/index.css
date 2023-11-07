@@ -1,0 +1,102 @@
+.info-solicitacoes {
+    padding: 20px;
+    background-color: #1d1d1d;
+    margin-left:8%;
+    margin-inline: 5%;
+    border-radius: 10px;
+    margin-top: 2%;
+    cursor: pointer;
+}
+
+.info-solicitacoes p {
+    margin-top: 3%;
+    margin-right: 4%;
+    text-align: left;
+}
+
+.solicitacoes-conteiner{
+    width:85%;
+    margin-left: 15%;
+}
+
+#modalSolicitacoes{
+    margin-left: 5%;
+    height: auto;
+}
+
+.modal-content{
+    color: white;
+}
+.btn-aceitar, .btn-recusar{
+    width: 40%;
+    margin-top: 15%;
+}
+
+.modal-content h2{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+.modal-content p{
+    margin-top: 8%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.aviso{
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-bottom: 3%;
+}
+.aviso p{
+    color: white;
+}
+
+@media (max-width: 1280px){
+    .solicitacoes-conteiner {
+        margin-left: 17%;
+    }
+}
+
+@media (max-width: 1140px){
+    .solicitacoes-conteiner {
+        margin-left: 18%;
+    }
+}
+
+@media (max-width: 1024px){
+    .solicitacoes-conteiner {
+        width: 76%;
+        margin-left: 24%;
+    }
+}
+@media (max-width: 880px){
+    .solicitacoes-conteiner {
+        width: 70%;
+        margin-left: 27%;
+    }
+}
+@media (max-width: 800px){
+    .info-solicitacoes p{
+        max-width: 100%;
+        font-size: 1rem;
+    }
+    .solicitacoes-conteiner {
+        width: 77%;
+        margin-left: 28%;
+        margin-top: 5%;
+    }
+
+    .btn-recusar{
+        margin-top: 0;
+    }
+
+    #modalSolicitacoes {
+        margin-left: 14%;
+        width: 48%;
+    } 
+    
+    .aviso{
+        margin-left: 28%;
+    }
+}

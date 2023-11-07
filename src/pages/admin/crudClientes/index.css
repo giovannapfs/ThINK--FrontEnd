@@ -1,0 +1,62 @@
+.crudClientes {
+    text-align: center;
+    margin: 20px;
+    color: white;
+    width: 80%;
+    margin-left: 18%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.iconeContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-left: -50%;
+}
+
+#barraPesquisa{
+    background-color: transparent;
+    border: none;
+}
+
+@media (max-width: 1350px){
+    .crudClientes{
+        width: 80%;
+        margin-left: 20%;
+    }
+}
+
+@media (max-width: 1260px){
+    .crudClientes{
+        width: 75%;
+        margin-left: 24%;
+    }
+}
+
+@media (max-width: 1024px){
+    .crudClientes{
+        width: 66%;
+        margin-left: 29%;
+    }
+}
+
+@media (max-width:800px){
+    .crudClientes{
+        width: 70%;
+        margin-left: 35%;
+    }
+}
+
+@media (max-width: 768px){
+    .crudClientes{
+        margin-left: 27%;
+    }
+}

@@ -1,0 +1,417 @@
+.containerPrincipal {
+    width: 100%;
+    color: #FFF;
+}
+
+#imagemPrincipal{
+    background-size: cover;
+    width: 100%;
+    background-image: url("../../assets/home/image\ 1.png");
+    background-position: center;
+}
+
+.itensContainer {
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5vw;
+}
+
+.itensContainer h1{
+    font-size: 11vw;
+    font-weight:900;    
+    margin-top: 4rem;
+}
+
+.itensContainer button a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.agende{
+width: 10rem !important;
+margin-bottom: 8rem;
+}
+
+.divisao{
+    height: 1rem;
+    background-color: black;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    color: white;
+    text-align: center;
+  }
+  
+.grid div h2{
+    margin-top: 45%;
+    margin-bottom: 45%;
+}
+
+#grid1{
+    background-image: url("../../assets/home/grid1.png");
+    max-height: 480px;
+    background-position: center;
+
+}
+#grid2{
+    background-image: url("../../assets/home/grid2.png");
+    max-height: 480px;
+    background-position: center;
+}
+#grid3{
+    background-image: url("../../assets/home/grid3.png");
+    max-height: 480px;
+    background-position: center;
+}
+
+.projeto{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#tituloProjeto{
+    text-align: center;
+    margin-top: 5vw;
+}
+
+#paragrafoProjeto{
+    margin: 3vw 12vw;
+    text-align: justify;
+}
+
+.topicosGeral{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.topicos{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 10vw;
+}
+
+.topicoProjetoDireita{
+    text-align: right;
+}
+
+.topicoProjetoEsquerda{
+    text-align: left;
+}
+
+.topicosItem{
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.topicosItem img{
+    max-width: 100px;
+    margin: 1rem 0;
+}
+
+.imagemProjeto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem;
+}
+
+.imagemProjeto img{
+    width: 28vw;
+}
+
+.topicoProjetoEsquerda p {
+    padding-right: 40%;
+}
+
+.portfolioHome{
+    background-image: url('../../assets/home/tattoo1.png');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 342px;
+    display: flex;
+    justify-content: center;
+}
+.portfolioConteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.portfolioConteudo p{
+    margin-bottom: 3vw;
+}
+
+.confira{
+    width: 100%;
+}
+
+.cuidadosEmensagem{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.iconEmail, .iconCoracao {
+    color: var(--var-lilas);
+    height: 40px;
+    margin-bottom: 1rem;
+}
+
+.iconSeta{
+    color: var(--var-lilas);
+    height: 40px;
+}
+
+.cuidados{
+    background-image: url('../../assets/home/tattoo2.png');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 429px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cuidados p{
+    color: white;
+    text-align: center;
+}
+
+.cuidadosTopicosGeral{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 1.5vw;
+}
+
+.cuidadosTopicosGeral div{
+    display: flex;
+    margin: 1rem 1.5rem;
+}
+
+.cuidadosTopicosGeral div p{
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.mensagem{
+    background-image: url('../../assets/home/tattoo3.png');
+    background-position: center;
+    width: 100%;
+    height: 429px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mensagemContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mensagem p{
+    color: white;
+    text-align: center;
+}
+
+.mensagemFormGeral{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.mensagemFormGeral div {
+    margin: 1rem;
+    text-align: center;
+}
+
+select {
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 300px;
+    height: 50px;
+    color: white;
+}
+
+option{
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 300px;
+    height: 50px;
+    color: white;
+}
+
+.alto-contraste .projeto {
+    background-color: black;
+    color: white;
+}
+
+.alto-contraste .iconCoracao{
+    color: yellow;
+}
+
+.alto-contraste .iconEmail{
+    color: yellow;
+}
+
+.alto-contraste .iconSeta{
+    color: yellow;
+}
+
+/* Estilos para tablets */
+@media (max-width: 1300px){
+    .input {
+        width: 100%;
+    }
+    select{
+        width: 100%;
+    }
+}
+
+@media (max-width: 1124px) {
+    .topicoProjetoEsquerda,.topicoProjetoDireita {
+        text-align: center;
+    }
+    .topicosItem{
+        display: inline;
+    }
+    .topicosItem div{
+        margin: 2rem 0;
+    }
+    .topicosItem img{
+        display: none ;
+    }
+    .topicoProjetoDireita p {
+        padding: 0 15vw;
+    }
+    .topicoProjetoEsquerda p {
+        padding: 0 15vw;
+    }
+    .topicos{
+        display: inline;
+        margin: 0;
+    }
+}
+
+@media (max-width: 1020px) {
+    .iconSeta{
+        max-width: 35px;
+    }
+    .descricao{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+@media (max-width: 875px) {
+    .mensagemFormGeral{
+        display: flex;
+        flex-direction: column;
+    }
+    .mensagemFormGeral div{
+        margin: 0.5rem;
+    }
+    .enviar{
+        margin-bottom: 5%;
+        width: 50%;
+    }
+    .mensagem{
+        height: 100%;
+    }
+    .mensagem img {
+        margin-top: 2rem;
+    }
+    .cuidados{
+        height: 100%;
+    }
+    .cuidadosTopicosGeral {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .cuidadosEmensagem{
+        display: block;
+    }
+    .mensagemFormGeral{
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .enviar {
+        margin-top: 2rem;
+    }
+    .cuidadosTopicosGeral {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 1.5vw;
+        margin-bottom: 2rem;
+    }
+    .iconCoracao{
+        margin-top: 2rem;
+    }
+    .input{
+        width: 300px;
+    }
+    .cuidadosEmensagem{
+        display: block;
+    }
+
+}
+
+/*Estilos para mobile*/
+@media (max-width: 576px){
+    .input{
+        width: 100%;
+    }
+    .mensagemFormGeral{
+        margin-top: 0.5rem;
+        display: inline-block;
+    }
+    .enviar {
+        margin-top: 1rem;
+    }
+    .mensagem img {
+        margin-top: 1rem;
+    }
+    .iconCoracao{
+        margin-top: 2rem;
+    }
+    .mensagem{
+        height: 496px;
+    }
+}
+
+@media (max-width: 450px) {
+    .itensContainer h1 {
+    font-size: 90px;
+} 
+}
+
+@media (max-width: 425px) {
+    .cuidadosTopicosGeral {
+        display: block;
+    }
+}

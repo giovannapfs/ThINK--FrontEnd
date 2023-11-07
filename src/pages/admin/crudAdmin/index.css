@@ -1,0 +1,144 @@
+.section{
+    margin-left: 10%;
+}
+
+.modal-admin{
+    width: 70% !important;
+    height: auto;
+    margin-top: 15%;
+    margin-left: 25%;
+  } 
+
+.perfis{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: 20%;
+    margin-top: 3%;
+    color: white;
+    text-align: center;
+}
+
+.perfilAdmin{
+    margin-right: 15%;
+}
+
+.perfilAdmin h2{
+    width: 120%;
+}
+
+.perfilAdmin p{
+    width: 120%;
+}
+
+.iconeAdmin{
+    border-radius: 27px;
+    width: 120%;
+    max-width: 170px;
+}
+
+.perfil{
+    display: flex;
+}
+
+.container-admin-modal-group{
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-adicionar{
+    width: 40%;
+    margin-top: 10%;
+}
+
+.modal-admin h4{
+    margin-bottom: 13% !important;
+}
+
+.fileLabel{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: -2%;
+}
+
+.icon-file{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.iconFile{
+    margin-left: 25%;
+}
+.file p {
+    margin-bottom: 5%;
+    color: var(--var-lilas);
+    margin-right: -80%;
+    margin-left: 0%;
+}
+
+#btns{
+flex-direction: column;
+}
+
+.admin{
+    bottom: 0;
+}
+
+
+.btn-cancelarAdmin{
+    background: transparent;
+    border: 2px solid var(--var-txt-lilas);
+    color: var(--var-lilas);
+    width: 40%;
+  }
+  
+  .btn-cancelarAdmin:hover{
+    color: white;
+  }
+  
+/*RESPONSIVIDADE*/
+@media (max-width: 1024px){
+    .perfis{
+        margin-left: 30%;
+        width: 65%;
+    }
+    .modal-admin{
+        max-width: 100%; 
+        margin-top: 10% !important;
+        margin-bottom: 5% !important;
+        margin-left: 24%;
+        height: auto;
+        margin-right: -5%;
+      }
+
+      .form h4{
+        font-size: 1.5rem;
+      }
+
+      .form-group{
+        margin-left: 5%;
+        margin-right: -3%;
+      }
+
+      .file{
+        margin-left: 5%;
+      }
+}
+
+@media (max-width: 882px){
+    .perfis{
+        margin-left: 35%;
+        width: 65%;
+    }
+    
+    .modal-admin{
+        max-width: 100%; 
+        margin-top: 10% !important;
+        margin-bottom: 5% !important;
+        margin-left: 26%;
+        height: auto;
+      }
+
+
+  
+}
