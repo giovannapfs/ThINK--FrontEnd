@@ -107,14 +107,14 @@
     color: yellow;
 }
 
-.alto-contraste .btn-editar, .btn-cancelar, .btn-salvar{
+.alto-contraste .btn-editar, .alto-contraste .btn-cancelar, .alto-contraste .btn-salvar{
     background-color: transparent;
     border: 1px solid white;
     font-weight: 900;
     color: yellow;
 }
 
-.alto-contraste .btn-editar:hover, .btn-cancelar:hover, .btn-salvar:hover{
+.alto-contraste .btn-editar:hover, .alto-contraste .btn-cancelar:hover, .alto-contraste.btn-salvar:hover{
     background-color: yellow;
     border: none;
     font-weight: 900;
