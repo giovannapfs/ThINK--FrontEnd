@@ -62,8 +62,8 @@ const Menu = () => {
         <ul>
           <li className="main-menu-item"><Link to="/signin">Login</Link></li>
           <li className="main-menu-item"><Link to="/">Sobre nós</Link></li>
-          <li className="main-menu-item" onClick={toggleSubMenu}>
-            Meu perfil
+          <li className="main-menu-item" onClick={toggleSubMenu}><Link to="">
+            Meu perfil</Link>
             {isSubMenuOpen && (
                 <ul className="sub-menuHome">
                 <li><Link to="/dashboard">Ir para dashboard</Link></li>
@@ -89,7 +89,7 @@ const Menu = () => {
             <li className="main-menu-item"><Link to="/">Sobre nós</Link></li>
             <br></br>
             <li className="main-menu-item">Meu perfil
-              <ul className="sub-menu">
+              <ul className="sub-menuHome">
                 <li><Link to="/dashboard">Ir para dashboard</Link></li>
                 <li onClick={handleLogout}><button>Sair</button></li>
               </ul>

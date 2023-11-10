@@ -61,8 +61,8 @@ const Menu = () => {
         
           <li className="main-menu-item"><Link to="/signin">Login</Link></li>
           <li className="main-menu-item"><Link to="/">Sobre nós</Link></li>
-          <li className="main-menu-item" onClick={toggleSubMenu}>
-            Meu perfil
+          <li className="main-menu-item" onClick={toggleSubMenu}><Link to="">
+            Meu perfil</Link>
             {isSubMenuOpen && (
               <ul className="sub-menu">
                 <li><Link to="/dashboard">Ir para dashboard</Link></li>

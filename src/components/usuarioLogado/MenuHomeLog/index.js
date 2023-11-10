@@ -62,12 +62,12 @@ const Menu = () => {
         <ul>
           <li className="main-menu-item"><Link to="/signin">Login</Link></li>
           <li className="main-menu-item"><Link to="/">Sobre nós</Link></li>
-          <li className="main-menu-item" onClick={toggleSubMenu}>
-            Meu perfil
+          <li className="main-submenu-item" onClick={toggleSubMenu}><Link to="">
+            Meu perfil</Link>
             {isSubMenuOpen && (
               <ul className="sub-menuHome">
-                <li><Link to="/perfil/informacoes">Minhas informações</Link></li>
-                <li><Link to="/perfil/agendamentos">Meus agendamentos</Link></li>
+                <li className="sub-menu-item"><Link to="/perfil/informacoes">Minhas informações</Link></li>
+                <li className="sub-menu-item"><Link to="/perfil/agendamentos">Meus agendamentos</Link></li>
                 <li><button>Excluir conta</button></li>
                 <li onClick={handleLogout}><button>Sair</button></li>
               </ul>
@@ -91,7 +91,7 @@ const Menu = () => {
             <li className="main-menu-item"><Link to="/">Sobre nós</Link></li>
             <br></br>
             <li className="main-menu-item">Meu perfil
-              <ul className="sub-menu">
+              <ul className="sub-menuHome">
                 <li><Link to="/perfil/informacoes">Minhas informações</Link></li>
                 <li><Link to="/perfil/agendamentos">Meus agendamentos</Link></li>
                 <li>Excluir conta</li>
