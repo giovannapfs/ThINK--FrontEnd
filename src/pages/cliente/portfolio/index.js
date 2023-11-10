@@ -115,7 +115,7 @@ export default function Portfolio(){
             Tipo: portfolio.Tipo,
             Cores: portfolio.Cores,
             imagem: portfolio.imagem,
-          });
+        });
         setIsModalOpen(true);
     };
 
@@ -134,7 +134,7 @@ export default function Portfolio(){
 
     return(
         <div className="container portfolio-container">
-             <MenuLogado /> 
+            <MenuLogado /> 
             <div className="header-image portfolio-tittle">
                 <h1>Portfó<span className="span-color">lio</span></h1>
             </div>
