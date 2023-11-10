@@ -25,12 +25,13 @@
   color: white;
 }
 
-
 .accessibility-link:hover, .high-contrast-button:hover, .font-size-button:hover, .accessibility-bar a:hover{
     text-decoration: underline;
-    font-weight: bolder;
 }
 
+button {
+    font-weight: normal;
+}
 
 .access-btn{
     border: none;
@@ -41,4 +42,3 @@
 .alto-contraste .acessibilidade-tittle{
     background-image: none;
 }
-

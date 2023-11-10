@@ -6,6 +6,15 @@
   color: var(--var-lilas)
 }
 
+.alto-contraste .menuHome a {
+  color: yellow;
+}
+
+.alto-contraste .menuHome a:hover {
+  text-decoration: underline;
+  color: yellow;
+}
+
 .menuHome {
   display: flex;
   justify-content: center;
