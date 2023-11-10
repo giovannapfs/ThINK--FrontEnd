@@ -226,6 +226,7 @@ button{
 
   .menu ul{
     padding: 20px;
+    margin-top: 50px;
     z-index: 10000;
   }
 

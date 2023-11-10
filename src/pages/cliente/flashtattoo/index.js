@@ -133,7 +133,7 @@ const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
     return(
         <div className="container flashtattoo-container">
             <MenuLogado /> 
-            <div className="header-image flashtattoo-tittle">
+            <div className="header-image flashtattoo-title">
                 <h1>Flash Tat<span className="span-color">too</span></h1>
             </div>
             <h3 className="txt-white">O QUE SÃO E COMO FUNCIONA?</h3>
