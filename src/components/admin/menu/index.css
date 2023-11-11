@@ -3,9 +3,19 @@
   text-decoration: none;
 }
 
-.menuHome a:hover {
+.menu a:hover {
   color: var(--var-lilas)
 }
+
+.alto-contraste .menu a {
+  color: yellow;
+}
+
+.alto-contraste .menu a:hover {
+  text-decoration: underline;
+  color: yellow;
+}
+
 
 .menu {
   display: flex;
@@ -36,6 +46,10 @@
   margin: 0 50px;
   cursor: pointer;
   font-weight: 800;
+}
+
+.alto-contraste .menu li{
+  color: yellow;
 }
 
 .menu img {
@@ -79,6 +93,18 @@
 
 button{
   font-size: 16px;
+}
+
+button:hover{
+  color: var(--var-lilas);
+}
+
+.alto-contraste button{
+  color: yellow;
+}
+
+.alto-contraste button:hover{
+  text-decoration: underline;
 }
 
 @media (max-width: 1308px){

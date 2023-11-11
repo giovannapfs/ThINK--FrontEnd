@@ -132,6 +132,10 @@ label {
   color: black;
 }
 
+.alto-contraste .form p a{
+  color: yellow;
+}
+
 
 @media (max-width: 768px) {
     .container-form-group {

@@ -45,6 +45,10 @@
   font-weight: 800;
 }
 
+.alto-contraste .menuHome li{
+  color: yellow;
+}
+
 .menuHome img {
   max-height: 100px;
   width: auto; 
@@ -83,6 +87,14 @@ button{
 
 button:hover{
   color: var(--var-lilas);
+}
+
+.alto-contraste button{
+  color: yellow;
+}
+
+.alto-contraste button:hover{
+  text-decoration: underline;
 }
 
 @media (max-width: 1308px){

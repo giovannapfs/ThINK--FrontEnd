@@ -40,7 +40,7 @@ export default function Login(){
             </div>
 
             <section className="form-conteiner">
-                <form class="form" onSubmit={handleLogin}>
+                <form class="form login" onSubmit={handleLogin}>
                 <FontAwesomeIcon icon={faUser} id="person-icon" />
                     <h4>Login</h4>
 

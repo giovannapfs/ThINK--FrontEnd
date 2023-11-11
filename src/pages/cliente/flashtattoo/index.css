@@ -141,6 +141,10 @@
     border: 1px solid white;
 }
 
+.alto-contraste .flashtattoo-title{
+    background-image: none;
+}
+
 .alto-contraste #info-flashtattoo {
     border: 1px solid white;
     background-color: transparent;

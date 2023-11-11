@@ -22,7 +22,7 @@ export default function Contato(){
             </div>
 
             <section className="form-container">
-                <form class="form">
+                <form class="form contato">
                     <FontAwesomeIcon icon={faEnvelope} id="envelope" />
                     <h4>Contato</h4>
                     <div className="container-form-group">

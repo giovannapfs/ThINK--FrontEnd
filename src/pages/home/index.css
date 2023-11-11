@@ -10,6 +10,10 @@
     background-position: center;
 }
 
+.alto-contraste #imagemPrincipal{
+    background-image: url("../../assets/home/image\ 1\ -\ alto\ contraste.png");
+}
+
 .itensContainer {
     z-index: 3;
     display: flex;
@@ -56,17 +60,30 @@ margin-bottom: 8rem;
     background-image: url("../../assets/home/grid1.png");
     max-height: 480px;
     background-position: center;
-
 }
+
+.alto-contraste #grid1{
+    background-image: url("../../assets/home/grid1\ -\ alto\ contraste.png");
+}
+
 #grid2{
     background-image: url("../../assets/home/grid2.png");
     max-height: 480px;
     background-position: center;
 }
+
+.alto-contraste #grid2{
+    background-image: url("../../assets/home/grid2\ -\ alto\ contraste.png");
+}
+
 #grid3{
     background-image: url("../../assets/home/grid3.png");
     max-height: 480px;
     background-position: center;
+}
+
+.alto-contraste #grid3{
+    background-image: url("../../assets/home/grid3\ -\ alto\ contraste.png");
 }
 
 .projeto{
@@ -143,6 +160,11 @@ margin-bottom: 8rem;
     display: flex;
     justify-content: center;
 }
+
+.alto-contraste .portfolioHome{
+    background-image: url("../../assets/home/tattoo1\ -\ alto\ contraste.png");
+}
+
 .portfolioConteudo {
     display: flex;
     flex-direction: column;
@@ -187,6 +209,10 @@ margin-bottom: 8rem;
     flex-direction: column;
 }
 
+.alto-contraste .cuidados {
+    background-image: url('../../assets/home/tattoo2\ -\ alto\ contraste.png');
+}
+
 .cuidados p{
     color: white;
     text-align: center;
@@ -218,6 +244,10 @@ margin-bottom: 8rem;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.alto-contraste .mensagem{
+    background-image: url('../../assets/home/tattoo3\ -\ alto\ contraste.png');
 }
 
 .mensagemContainer{

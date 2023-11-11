@@ -6,6 +6,15 @@
   color: var(--var-lilas)
 }
 
+.alto-contraste .menuHome a {
+  color: yellow;
+}
+
+.alto-contraste .menuHome a:hover {
+  text-decoration: underline;
+  color: yellow;
+}
+
 .menuHome {
   display: flex;
   justify-content: center;
@@ -43,28 +52,8 @@
   margin: 0 30px;
 }
 
-.sub-menuHome {
-  display: none;
-  position: absolute;
-  padding: 10px;
-  list-style: none;
-  flex-direction: column;
-  margin-top: 5px !important;
-  
-  text-align: left;
-}
-
-.menuHome li:hover .sub-menuHome {
-  display: block;
-  
-}
-
 .menuHome li:not(:last-child) {
   margin-bottom: 5px;
-}
-
-.sub-menuHome li {
-  margin: 15px 0; 
 }
 
 button{
@@ -74,6 +63,14 @@ button{
 
 button:hover{
   color: var(--var-lilas);
+}
+
+.alto-contraste button{
+  color: yellow;
+}
+
+.alto-contraste button:hover{
+  text-decoration: underline;
 }
 
 @media (max-width: 1308px){
@@ -167,11 +164,6 @@ button:hover{
     margin: 10px;
   }
 
-  .sub-menuHome {
-      position: relative;
-      padding-left: 0px !important;
-  }
-
   .menuHome li {
       margin: 0;
   }
@@ -184,10 +176,6 @@ button:hover{
     padding: 20px;
   }
 
-  .sub-menuHome ul {
-    padding-left: 15px !important;
-    margin-top: 5px;
-  }
 }
 
 .mobileHome-menu-open .desktop-menuHome {

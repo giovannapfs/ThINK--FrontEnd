@@ -56,8 +56,9 @@ body{
 
 .alto-contraste .btn {
     background-color: transparent;
-    border: 1px solid white;
+    border: 1px solid yellow !important;
     font-weight: 900;
+    color: yellow;
 }
 
 .alto-contraste .btn:hover{

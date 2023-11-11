@@ -21,7 +21,7 @@ export default function Cadastro(){
             </div>
 
             <section className="form-container">
-                <form class="form">
+                <form class="form cadastro">
                 <FontAwesomeIcon icon={faUser} id="person-icon" />
                     <h4>Cadastro</h4>
                     <div className="container-form-group">

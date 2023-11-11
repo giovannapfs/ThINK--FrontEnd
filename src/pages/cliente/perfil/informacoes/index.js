@@ -94,6 +94,7 @@ export default function MinhasInformacoes(){
                             name="idade" value={client.idade} required />
                         </div>
                         <div class="form-group info-perfil">
+                            <label htmlFor="senha">Senha:</label>
                             <input className="input" type="text" id="senha" 
                             onChange={(e) => setClient({...client, senha: e.target.value})}
                             name="senha" value={client.senha} required />
@@ -119,19 +120,19 @@ export default function MinhasInformacoes(){
                     <div class="container-form-group info-container">
                         <div class="form-group info-perfil">
                             <label for="nome">Nome:</label>
-                            <input className="input-info" type="text" id="nome" value={client.nome} readonly />
+                            <input className="input" type="text" id="nome" value={client.nome} readonly />
                         </div>
                         <div class="form-group info-perfil">
                             <label for="email">Email:</label>
-                            <input className="input-info" type="text" id="email" value={client.email} readonly />
+                            <input className="input" type="text" id="email" value={client.email} readonly />
                         </div>
                         <div class="form-group info-perfil">
                             <label for="telefone">Telefone:</label>
-                            <input className="input-info" type="text" id="telefone" value={client.telefone} readonly />
+                            <input className="input" type="text" id="telefone" value={client.telefone} readonly />
                         </div>
                         <div class="form-group info-perfil">
                             <label for="idade">Idade:</label>
-                            <input className="input-info" type="text" id="idade" value={client.idade + " anos"} readonly />
+                            <input className="input" type="text" id="idade" value={client.idade + " anos"} readonly />
                         </div>
                         <div class="form-group info-perfil">
                             <label for="telefone">Senha:</label>
