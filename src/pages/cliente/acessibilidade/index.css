@@ -12,3 +12,7 @@
 .tituloAcessibilidade{
     font-weight: 800;
 }
+
+.alto-contraste .acessibilidade-container a{
+    color: yellow;
+}

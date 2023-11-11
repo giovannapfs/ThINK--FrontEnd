@@ -30,7 +30,7 @@ export default function Home(){
                 <div className="itensContainer">
                     <h1>ThINK</h1>
                     <p>Uma nova maneira de Pensar e Tatuar</p>
-                    <Link to="/agenda"><button className="btn agende">Agende já!</button></Link>
+                    <Link to="/agenda"><button className="btn agende" aria-label="Agende já sua tatuagem!">Agende já!</button></Link>
                 </div> 
                 </div>
             </div>
@@ -107,7 +107,7 @@ export default function Home(){
                 <div className="portfolioConteudo">
                     <h1 className="txt-white h1-info">Portfólio</h1>
                     <p>Conheça nosso trabalho.</p>
-                    <Link to="/portfolio"><button className="btn confira">Confira</button></Link>
+                    <Link to="/portfolio"><button className="btn confira" aria-label="Confira o nosso portfólio!">Confira</button></Link>
                 </div>
             </div>
             <div className="divisao">.</div>
@@ -165,7 +165,7 @@ export default function Home(){
                                 </select>
                             </div>
                         </div>
-                        <button type="submit" class="btn enviar">Enviar</button>
+                        <button type="submit" class="btn enviar" aria-label="Enviar formulário">Enviar</button>
                     </div>
                     
                 </div>
