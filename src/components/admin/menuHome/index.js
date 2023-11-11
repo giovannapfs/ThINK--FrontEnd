@@ -28,6 +28,8 @@ const Menu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const mobileMenuButtonClass = `menu-icon ${isMobileMenuOpen ? 'open' : ''}`;
+
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
   };
@@ -75,7 +77,7 @@ const Menu = () => {
       </div>
 
       <div className="mobileHome-menu">
-        <button className="menu-icon" onClick={toggleMobileMenu}>
+        <button className={mobileMenuButtonClass} onClick={toggleMobileMenu}>
           <span></span>
           <span></span>
           <span></span>

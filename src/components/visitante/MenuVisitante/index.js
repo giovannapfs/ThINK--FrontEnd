@@ -23,6 +23,8 @@ const Menu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const mobileMenuButtonClass = `menu-icon ${isMobileMenuOpen ? 'open' : ''}`;
+
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
   };
@@ -59,7 +61,7 @@ const Menu = () => {
 
       <div className="mobile-menu">
       <Link to="/"><img src={logo} alt="Logo do projeto com o nome ThINK" /></Link>
-        <button className="menu-icon" onClick={toggleMobileMenu}>
+        <button className={mobileMenuButtonClass} onClick={toggleMobileMenu}>
           <span></span>
           <span></span>
           <span></span>
