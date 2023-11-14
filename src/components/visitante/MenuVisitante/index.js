@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 
 import logo from "../../../assets/icones/logo-removebg-preview 1.png";
@@ -10,15 +9,8 @@ import "../../../styleGlobal.css";
 import "./index.css";
 
 const Menu = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   
-  const navigate = useNavigate();
-
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-  };
-
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -36,15 +28,6 @@ const Menu = () => {
       window.removeEventListener('resize', closeMobileMenu);
     };
   }, []);
-
-  const handleLogout = () =>{
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    localStorage.removeItem("userType");
-    navigate('/');
-    window.location.reload();
-}
-
 
   return (
     <div className={`menu ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
@@ -72,7 +55,6 @@ const Menu = () => {
             <li className="main-menu-item"><Link to="/contato">Contato</Link></li>
             <li className="main-menu-item"><Link to="/signin">Login</Link></li>
             <li className="main-menu-item"><Link to="/signup">Cadastro</Link></li>
-            <br></br>
           </ul>
         )}
       </div>

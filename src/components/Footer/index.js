@@ -34,7 +34,7 @@ export default function Footer(){
                     <p>SAB : 10:00 - 18:00</p>
                     
                 </div>
-                <p id="dev">Desenvolvido por Beatriz,  Eloisa, Gabriel, Giovanna, Karoline e Priscila.</p>
+                <p id="dev">Desenvolvido por Beatriz, Eloisa, Gabriel, Giovanna, Karoline e Priscila.</p>
             </div>
         </div>
     );

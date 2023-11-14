@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 
 import logo from "../../../assets/icones/logo-removebg-preview 1.png";
@@ -10,15 +9,8 @@ import "../../../styleGlobal.css";
 import "./index.css";
 
 const Menu = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   
-  const navigate = useNavigate();
-
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-  };
-
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -37,15 +29,6 @@ const Menu = () => {
     };
   }, []);
 
-  const handleLogout = () =>{
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    localStorage.removeItem("userType");
-    navigate('/');
-    window.location.reload();
-}
-
-
   return (
     <div className={`menuHome ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
       <BarraAcessibilidade />
@@ -62,6 +45,7 @@ const Menu = () => {
       </div>
 
       <div className="mobileHome-menu">
+        <Link to="/"><img src={logo} alt="Logo do projeto com o nome ThINK" /></Link>
         <button className={mobileMenuButtonClass}  onClick={toggleMobileMenu}>
           <span></span>
           <span></span>

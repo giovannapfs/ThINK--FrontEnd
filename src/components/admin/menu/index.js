@@ -11,17 +11,12 @@ import "./index.css";
 
 const Menu = () => {
   const [isSubMenuOpen, setSubMenuOpen] = useState(false);
-  const [isMenuOpen, setMenuOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   const navigate = useNavigate();
 
   const toggleSubMenu = () => {
     setSubMenuOpen(!isSubMenuOpen);
-  };
-
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
   };
 
   const toggleMobileMenu = () => {
@@ -49,7 +44,6 @@ const Menu = () => {
     navigate('/');
     window.location.reload();
 }
-
 
   return (
     <div className={`menu ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>

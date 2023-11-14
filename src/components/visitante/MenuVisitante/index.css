@@ -4,7 +4,7 @@
 }
 
 .menu a:hover {
-  color: var(--var-lilas)
+  color: var(--var-lilas);
 }
 
 .alto-contraste .menu a {
@@ -15,7 +15,6 @@
   text-decoration: underline;
   color: yellow;
 }
-
 
 .menu {
   display: flex;
@@ -81,43 +80,43 @@ button:hover{
 
 @media (max-width: 1308px){
   .menu li {
-    margin: 0px 45px
+    margin: 0px 45px;
   }
 }  
 
 @media (max-width: 1284px){
   .menu li {
-    margin: 0px 40px
+    margin: 0px 40px;
   }
 }  
 
 @media (max-width: 1190px){
   .menu li {
-    margin: 0px 35px
+    margin: 0px 35px;
   }
 }
 
 @media (max-width: 1164px){
   .menu li {
-    margin: 0px 30px
+    margin: 0px 30px;
   }
 }
 
 @media (max-width: 1070px){
   .menu li {
-    margin: 0px 25px
+    margin: 0px 25px;
   }
 }
 
 @media (max-width: 1044px){
   .menu li {
-    margin: 0px 20px
+    margin: 0px 20px;
   }
 }
 
 @media (max-width: 992px){
   .menu li {
-    margin: 0px 10px
+    margin: 0px 10px;
   }
 }
 
@@ -168,7 +167,6 @@ button:hover{
   .mobile-menu img {
     display: flex;
     max-width: 50%;
-  
   }
 
   .menu-icon {
@@ -221,7 +219,6 @@ button:hover{
     margin-top: 50px;
     z-index: 10000;
   }
-
 }
 
 .mobile-menu-open .desktop-menu {

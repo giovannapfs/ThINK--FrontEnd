@@ -11,17 +11,12 @@ import "./index.css";
 
 const Menu = () => {
   const [isSubMenuOpen, setSubMenuOpen] = useState(false);
-  const [isMenuOpen, setMenuOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   const navigate = useNavigate();
 
   const toggleSubMenu = () => {
     setSubMenuOpen(!isSubMenuOpen);
-  };
-
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
   };
 
   const toggleMobileMenu = () => {
@@ -62,7 +57,6 @@ const Menu = () => {
         </ul>
         <Link to="/"><img src={logo} alt="Logo do projeto com o nome ThINK" /></Link>
         <ul>
-          <li className="main-menu-item"><Link to="/signin">Login</Link></li>
           <li className="main-menu-item"><Link to="/">Sobre nós</Link></li>
           <li className="main-menu-item" onClick={toggleSubMenu}><Link to="">
             Meu perfil</Link>
@@ -87,7 +81,6 @@ const Menu = () => {
             <li className="main-menu-item"><Link to="/portfolio">Portfolio</Link></li>
             <li className="main-menu-item"><Link to="/flashtattoo">Flash tattoo</Link></li>
             <li className="main-menu-item"><Link to="/agenda">Agenda</Link></li>
-            <li className="main-menu-item"><Link to="/contato">Contato</Link></li>
             <li className="main-menu-item"><Link to="/">Sobre nós</Link></li>
             <br></br>
             <li className="main-menu-item">Meu perfil

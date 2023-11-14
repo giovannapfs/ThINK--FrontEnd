@@ -3,7 +3,7 @@
   text-decoration: none;
 }
 .menuHome a:hover {
-  color: var(--var-lilas)
+  color: var(--var-lilas);
 }
 
 .alto-contraste .menuHome a {
@@ -63,13 +63,11 @@
   list-style: none;
   flex-direction: column;
   margin-top: 5px !important;
-  
   text-align: left;
 }
 
 .menuHome li:hover .sub-menuHome {
   display: block;
-  
 }
 
 .menuHome li:not(:last-child) {
@@ -99,43 +97,43 @@ button:hover{
 
 @media (max-width: 1308px){
   .menuHome li {
-    margin: 0px 45px
+    margin: 0px 45px;
   }
 }  
 
 @media (max-width: 1284px){
   .menuHome li {
-    margin: 0px 40px
+    margin: 0px 40px;
   }
 }  
 
 @media (max-width: 1190px){
   .menuHome li {
-    margin: 0px 35px
+    margin: 0px 35px;
   }
 }
 
 @media (max-width: 1164px){
   .menuHome li {
-    margin: 0px 30px
+    margin: 0px 30px;
   }
 }
 
 @media (max-width: 1070px){
   .menuHome li {
-    margin: 0px 25px
+    margin: 0px 25px;
   }
 }
 
 @media (max-width: 1044px){
   .menuHome li {
-    margin: 0px 20px
+    margin: 0px 20px;
   }
 }
 
 @media (max-width: 948px){
   .menuHome li {
-    margin: 0px 10px
+    margin: 0px 10px;
   }
 }
 
@@ -167,7 +165,6 @@ button:hover{
     transform: rotate(90deg);
   }
   
-
   .menu-icon span {
     height: 3px;
     width: 25px;

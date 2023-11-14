@@ -22,8 +22,8 @@
 }
 
 .accessibility-bar a{
-  text-decoration: none;
-  color: white;
+    text-decoration: none;
+    color: white;
 }
 
 .accessibility-link:hover, .high-contrast-button:hover, .font-size-button:hover, .accessibility-bar a:hover{
