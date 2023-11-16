@@ -3,11 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import MenuLogado from "../../../../components/usuarioLogado/MenuLog";
 import Footer from "../../../../components/Footer";
 import Modal from 'react-modal';
+import { hotjar } from "react-hotjar";
 
 import '../../../../styleGlobal.css';
 import './index.css';
 
 export default function MeusAgendamentos(){
+    useEffect(() => {
+        hotjar.initialize(3738750, 6);
+      }, []);
+
     const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
     const navigate = useNavigate();
     const [modalIsOpen, setModalIsOpen] = useState(false);

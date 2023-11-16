@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import MenuLogado from "../../../components/usuarioLogado/MenuLog";
 import Footer from '../../../components/Footer';
+import { hotjar } from "react-hotjar";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +12,10 @@ import './index.css'
 import axios from "axios";
 
 export default function Contato(){
+    useEffect(() => {
+        hotjar.initialize(3738750, 6);
+      }, []);
+
     const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
     return (
