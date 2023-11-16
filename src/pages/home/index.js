@@ -1,5 +1,4 @@
 import React,{Suspense, useEffect, useState} from "react";
-import Menu from '../../components/visitante/MenuHomeVisitante';
 import MenuLogado from "../../components/usuarioLogado/MenuHomeLog";
 import Footer from '../../components/Footer';
 import { Link } from 'react-router-dom';

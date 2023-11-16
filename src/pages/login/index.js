@@ -1,8 +1,6 @@
 import React, {useState, useHistory} from "react";
 import { Link } from "react-router-dom";
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import Menu from "../../components/visitante/MenuVisitante";
 import MenuLogado from "../../components/usuarioLogado/MenuLog";
 import Footer from "../../components/Footer";
 
@@ -27,7 +25,7 @@ export default function Login(){
             navigate('/');
             setIsUserLoggedIn(true);
         }else if(email === "maria@gmail.com"){
-            navigate('/dashboard/administradores');
+            navigate('/dashboard');
             setIsUserLoggedIn(true);
         }
     }

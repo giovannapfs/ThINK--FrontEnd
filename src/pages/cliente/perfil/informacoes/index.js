@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import Modal from 'react-modal';
-import Menu from '../../../../components/usuarioLogado/MenuLog';
 import MenuLogado from "../../../../components/usuarioLogado/MenuLog";
 import Footer from '../../../../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -93,17 +92,11 @@ export default function MinhasInformacoes(){
                             onChange={(e) => setClient({...client, idade: e.target.value})}
                             name="idade" value={client.idade} required />
                         </div>
-                        <div class="form-group info-perfil">
-                            <label htmlFor="senha">Senha:</label>
-                            <input className="input" type="text" id="senha" 
-                            onChange={(e) => setClient({...client, senha: e.target.value})}
-                            name="senha" value={client.senha} required />
-                        </div>
                     </div>
 
                     <div className="flex">
-                        <button type="submit" className="btn btn-salvarInfo">Salvar</button>
-                        <button className="btn btn-cancelarInfo" onClick={closeModal}>Cancelar</button>
+                        <button type="submit" className="btn btn-salvar">Salvar</button>
+                        <button className="btn btn-cancelar" onClick={closeModal}>Cancelar</button>
                     </div>
                 </form>
 

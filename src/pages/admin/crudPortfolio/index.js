@@ -18,7 +18,7 @@ import './index.css'
 
 export default function CrudPortfolio() {
     const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
-/*
+
      useEffect(() => {
          const userType = localStorage.getItem("userType");
  
@@ -28,7 +28,7 @@ export default function CrudPortfolio() {
              setIsUserLoggedIn(userType === "admin");
          }
          
-     }, []); */
+     }, []); 
 
     const [portfolio, setPortfolio] = useState([
         {
@@ -168,7 +168,7 @@ export default function CrudPortfolio() {
             <Menu />
             <section>
                 <div className="tituloDashboard">
-                    <h1>Portfo<span className="span-color-dashboard">lio</span></h1>
+                    <h1>Portfó<span className="span-color-dashboard">lio</span></h1>
                 </div>
                 <section className="portfolio">
                     {portfolio.map((portfolio) => (

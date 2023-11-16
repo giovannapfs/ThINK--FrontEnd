@@ -18,7 +18,6 @@ import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 import { useNavigate } from 'react-router-dom';
 
-import Menu from '../../../components/usuarioLogado/MenuLog';
 import MenuLogado from "../../../components/usuarioLogado/MenuLog";
 import Footer from '../../../components/Footer';
 
