@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash, faEdit, faUser } from '@fortawesome/free-solid-svg-icons';
 import { hotjar } from 'react-hotjar';
 
+
 import { useNavigate } from "react-router-dom";
 
 import '../../../../styleGlobal.css';

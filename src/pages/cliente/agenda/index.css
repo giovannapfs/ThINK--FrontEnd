@@ -216,7 +216,6 @@
   color: yellow;
 }
 
-
 .alto-contraste .btn-voltar{
   background-color: transparent;
   border: 1px solid white;
@@ -230,6 +229,7 @@
   font-weight: 900;
   color: black;
 }
+
 label {
   display: flex;
   align-items: center;
@@ -275,7 +275,7 @@ input[type="checkbox"] {
   
     .section {
       width: 50%; 
-     
+    
     }
     .btn-agendamentos{
         width: 40%;

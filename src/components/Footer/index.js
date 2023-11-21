@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { hotjar } from "react-hotjar";
+import { InputMask } from 'react-input-mask';
 
 import Logo from '../../assets/icones/logo-removebg-preview 1.png';
 

@@ -73,6 +73,11 @@ label {
   width: 40%;
 }
 
+.avisoForm {
+  font-size: smaller;
+  margin: 10px 0 !important;
+}
+
 .alto-contraste .cadastro-tittle{
   background-image: none; 
 }

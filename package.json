@@ -33,6 +33,7 @@
     "react-datetime-picker": "^5.5.1",
     "react-dom": "^18.2.0",
     "react-hotjar": "^6.1.0",
+    "react-input-mask": "^2.0.4",
     "react-loader-spinner": "^5.4.5",
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.15.0",
