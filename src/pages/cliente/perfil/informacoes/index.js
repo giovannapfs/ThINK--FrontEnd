@@ -5,7 +5,9 @@ import Footer from '../../../../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash, faEdit, faUser } from '@fortawesome/free-solid-svg-icons';
 import { hotjar } from 'react-hotjar';
-
+import MaskedInput from 'react-input-mask';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 import { useNavigate } from "react-router-dom";
 
@@ -42,11 +44,30 @@ export default function MinhasInformacoes(){
     };
 
     const closeModal = () => {
-       
         setIsModalOpen(false);
     };
-    
 
+    const validationSchema = Yup.object({
+        nome: Yup.string().min(2, "O nome deve ter pelo menos 2 caracteres").required("Campo obrigatório"),
+        email: Yup.string().email("E-mail inválido").required("Campo obrigatório"),
+        telefone: Yup.string().required("Campo obrigatório"),
+        idade: Yup.number().min(18, "A idade deve ser igual ou maior que 18").required("Campo obrigatório"),
+    });
+
+    const formik = useFormik({
+        initialValues: {
+            nome: client.nome,
+            email: client.email,
+            telefone: client.telefone,
+            idade: client.idade,
+        },
+        validationSchema: validationSchema,
+        onSubmit: values => {
+            console.log('Formulário enviado com os valores:', values);
+            closeModal();
+        },
+    });
+    
     return(
         <div className="container perfil-container">
             <MenuLogado /> 
@@ -70,33 +91,73 @@ export default function MinhasInformacoes(){
                 }}
             >
                 
-                <form className="form modal-form">
+                <form className="form modal-form" onSubmit={formik.handleSubmit}>
                     <FontAwesomeIcon icon={faUser} id="person-icon" alt="Icon de usuário"/>
                     <h4>Atualizar informações</h4>
                     <div className="container-form-group info-container">
                         <div className="form-group info-perfil">
                             <label htmlFor="nome">Nome:</label>
-                            <input className="input" type="text" id="nome" 
-                            onChange={(e) => setClient({ ...client, nome: e.target.value })}
-                            name="nome" value={client.nome} required />
+                            <input
+                            className="input"
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            value={formik.values.nome}
+                            />
+                            {formik.touched.nome && formik.errors.nome ? (
+                                <div className="avisoForm">{formik.errors.nome}</div>
+                            ) : null}
                         </div>
                         <div className="form-group info-perfil">
                             <label htmlFor="email">Email:</label>
-                            <input className="input" type="email" id="email" 
-                            onChange={(e) => setClient({...client, email: e.target.value})}
-                            name="email" value={client.email} required />
+                            <input
+                                className="input"
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="E-mail"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.email}
+                            />
+                            {formik.touched.email && formik.errors.email ? (
+                                <div className="avisoForm">{formik.errors.email}</div>
+                            ) : null}
                         </div>
                         <div className="form-group info-perfil">
                             <label htmlFor="telefone">Telefone:</label>
-                            <input className="input" type="tel" id="telefone" 
-                            onChange={(e) => setClient({...client, telefone: e.target.value})}
-                            name="telefone" value={client.telefone} required />
+                            <MaskedInput
+                                className="input"
+                                type="tel"
+                                id="telefone"
+                                name="telefone"
+                                placeholder="Telefone"
+                                mask="(99) 99999-9999"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.telefone}
+                            />
+                            {formik.touched.telefone && formik.errors.telefone ? (
+                                <div className="avisoForm">{formik.errors.telefone}</div>
+                            ) : null}
                         </div>
                         <div className="form-group info-perfil">
                             <label htmlFor="idade">Idade:</label>
-                            <input className="input" type="number" id="idade"
-                            onChange={(e) => setClient({...client, idade: e.target.value})}
-                            name="idade" value={client.idade} required />
+                            <input
+                                className="input"
+                                type="number"
+                                id="idade"
+                                name="idade"
+                                placeholder="Idade"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.idade}
+                            />
+                            {formik.touched.idade && formik.errors.idade ? (
+                                <div className="avisoForm">{formik.errors.idade}</div>
+                            ) : null}
                         </div>
                     </div>
 

@@ -185,14 +185,13 @@ export default function Home(){
                                 {formik.touched.nome && formik.errors.nome ? (
                                 <div className="avisoForm">{formik.errors.nome}</div>
                             ) : null} 
-                            
                             </div>
                             <div>
                                 <input className="input" 
                                 type="tel" 
                                 id="telefone" 
                                 name="telefone" 
-                                placeholder="WhatsApp" required
+                                placeholder="WhatsApp"
                                 mask="(99) 99999-9999"
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
