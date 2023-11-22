@@ -273,6 +273,19 @@ margin-top: 65%;
     text-align: center;
 }
 
+.avisoHome{
+    font-size: smaller;
+    color: red;
+    margin-bottom: -66px !important;
+    word-wrap: break-word;
+    text-align: center;
+    width: 90%;
+    margin-top: 5px !important;
+    margin-left: 2% !important;
+    margin-right: 2% !important;
+    margin-top: 5px !important;
+}
+
 /* Exemplo de estilo para a seta para baixo */
 .seta-para-baixo {
     font-size: 80px;
@@ -342,7 +355,7 @@ option{
 
 /* Estilos para tablets */
 @media (max-width: 1300px){
-    .input {
+    .inputHome {
         width: 100%;
     }
     select{
@@ -431,18 +444,20 @@ option{
     .iconCoracao{
         margin-top: 2rem;
     }
-    .input{
+    .inputHome{
         width: 300px;
     }
     .cuidadosEmensagem{
         display: block;
     }
-
+    .avisoHome{
+        margin-bottom: 0 !important;
+    }
 }
 
 /*Estilos para mobile*/
 @media (max-width: 576px){
-    .input{
+    .inputHome{
         width: 100%;
     }
     .mensagemFormGeral{

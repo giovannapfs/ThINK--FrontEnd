@@ -41,7 +41,7 @@ export default function Home(){
             email: "",
             telefone: "",
         },
-
+        validationSchema: validationSchema,
     });
     const handleScroll = () => {
         // Lógica a ser executada quando o usuário rolar para baixo
@@ -166,28 +166,30 @@ export default function Home(){
                             </div>
                     </div>
                 </div>
-                <div className="mensagem">
+                <div className="mensagem" onSubmit={formik.handleSubmit}>
                     <FontAwesomeIcon icon={faEnvelopeOpen} className="iconEmail" alt="Icone de um envelope"/>
                     <h1 className="txt-white h1-info">Fale Conosco</h1>
                     <p className="descricao">Para mais informações entre em contato com a gente!</p>
                     <div className="mensagemContainer">
                         <div className="mensagemFormGeral">
                             <div>
-                                <input 
-                                className="input" 
-                                type="text" 
-                                id="nome" 
-                                name="nome" 
-                                placeholder="Nome" required
+                            <input
+                                className="input inputHome"
+                                type="text"
+                                id="nome"
+                                name="nome"
+                                placeholder="Nome"
+                                required
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                value={formik.values.nome}/>
-                                {formik.touched.nome && formik.errors.nome ? (
-                                <div className="avisoForm">{formik.errors.nome}</div>
-                            ) : null} 
+                                value={formik.values.nome}
+                            />
+                            {formik.touched.nome && formik.errors.nome ? (
+                                <div className="avisoHome">{formik.errors.nome}</div>
+                            ) : null}
                             </div>
                             <div>
-                                <input className="input" 
+                                <input className="input inputHome" 
                                 type="tel" 
                                 id="telefone" 
                                 name="telefone" 
@@ -198,11 +200,11 @@ export default function Home(){
                                 value={formik.values.telefone}
                                 />
                                 {formik.touched.telefone && formik.errors.telefone ? (
-                                <div className="avisoForm">{formik.errors.telefone}</div>
+                                <div className="avisoHome">{formik.errors.telefone}</div>
                             ) : null}
                             </div>
                             <div >
-                                <input className="input" 
+                                <input className="input inputHome" 
                                 type="email" 
                                 id="email" 
                                 name="email" 
@@ -212,7 +214,7 @@ export default function Home(){
                                 value={formik.values.email}
                                 />
                                 {formik.touched.email && formik.errors.email ? (
-                                <div className="avisoForm">{formik.errors.email}</div>
+                                <div className="avisoHome">{formik.errors.email}</div>
                             ) : null}  
                             </div>
                             <div>
