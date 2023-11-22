@@ -6,7 +6,6 @@ import { hotjar } from 'react-hotjar';
 import MaskedInput from 'react-input-mask';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import ScrollTrigger from 'react-scroll-trigger';
 
 import '../../styleGlobal.css';
 import './index.css';
@@ -43,18 +42,61 @@ export default function Home(){
         },
         validationSchema: validationSchema,
     });
-    const handleScroll = () => {
-        // Lógica a ser executada quando o usuário rolar para baixo
-        console.log('Rolou para baixo!');
-      };
 
+    const [showScrollDownButton, setShowScrollDownButton] = useState(false);
+    const [showScrollUpButton, setShowScrollUpButton] = useState(false);
+    const scrollToBottom = () => {
+        console.log('Scrolling to bottom');
+        window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+      };
+    
+      const handleScroll = () => {
+        const scrollPosition = window.scrollY;
+        const scrollThreshold = 100;
+    
+        console.log('Scroll Position:', scrollPosition);
+    
+        setShowScrollDownButton(scrollPosition < scrollThreshold);
+        setShowScrollUpButton(scrollPosition > scrollThreshold);
+      };
+  
+    useEffect(() => {
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
+
+const buttonStyles = {
+  position: 'fixed',
+  bottom: '20px',
+  right: '20px',
+  backgroundColor: '#EB1CE4',
+  color: '#fff',
+  border: 'none',
+  borderRadius: '50%',
+  padding: '10px 20px',
+  fontSize: '20px',
+  cursor: 'pointer',
+  display: showScrollDownButton ? 'block' : 'none',
+};
+
+const buttonStylesUp = {
+    position: 'fixed',
+  bottom: '20px',
+  right: '20px',
+  backgroundColor: '#EB1CE4',
+  color: '#fff',
+  border: 'none',
+  borderRadius: '50%',
+  padding: '10px 20px',
+  fontSize: '20px',
+  cursor: 'pointer',
+  display: showScrollUpButton ? 'block' : 'none',
+  };
     return (
         <div className="containerHome">
-                <div>
-                <ScrollTrigger onEnter={handleScroll}>
-                    <div className="seta-para-baixo">↓</div>
-                </ScrollTrigger>
-                </div>
             <div className="containerPrincipal">
                 <div id="imagemPrincipal">
                  <MenuLogado />
@@ -237,6 +279,20 @@ export default function Home(){
                     
                 </div>
             </div>
+    {showScrollUpButton && (
+        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={buttonStylesUp}>
+          &#8593;
+        </button>
+      )}
+      {showScrollDownButton && (
+        <button
+        onClick={scrollToBottom}
+        style={buttonStyles}
+        className="bounce-animation"
+      >
+        &#8595;
+      </button>
+      )}
             <Footer/>
         </div>
         );
