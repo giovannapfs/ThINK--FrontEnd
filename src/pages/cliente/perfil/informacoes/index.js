@@ -152,7 +152,7 @@ export default function MinhasInformacoes(){
                             </div>
                         </div>
                     </div>
-                    <button onClick={(e) => openModal(e)} class="btn btn-editar">
+                    <button onClick={(e) => openModal(e)} className="btn btn-editar">
                         <FontAwesomeIcon className="editIcon" icon={faEdit } />
                         Editar info
                     </button>

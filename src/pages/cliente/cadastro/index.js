@@ -4,6 +4,7 @@ import MenuLogado from "../../../components/usuarioLogado/MenuLog";
 import Footer from '../../../components/Footer';
 import { hotjar } from "react-hotjar";
 import MaskedInput from 'react-input-mask';
+import logo from "../../../assets/icones/logo-removebg-preview 1.png"
 
 import Modal from 'react-modal';
 
@@ -19,6 +20,18 @@ export default function Cadastro(){
     }, []);
 
     const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const openModal = (e) => {
+        e.preventDefault();
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+       
+        setIsModalOpen(false);
+    };
+    
 
     //validação de campos de senha
     const [password, setPassword] = useState('');
@@ -55,16 +68,6 @@ export default function Cadastro(){
 
     const [idade, setIdade] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    
-        if (isPasswordValid) {
-            console.log('Formulário enviado com sucesso!');
-        } else {
-            console.log('Erro no formulário. Corrija os campos destacados.');
-        }
-    };
-    
 
     return (
         <div className="container container-cadastro">
@@ -73,11 +76,49 @@ export default function Cadastro(){
                 <h1>Cadas<span className="span-color">tro</span></h1>
             </div>
 
-            <Modal>
+            <Modal
+                isOpen={isModalOpen}
+                onRequestClose={closeModal}
+                id="modal-cadastro"
+                contentLabel="Detalhes da Tatuagem"
+                style={{
+                    overlay: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)', 
+                    },
+                    content: {
+                        top: '50%', 
+                        left: '50%', 
+                        transform: 'translate(-50%, -50%)', 
+                        backgroundColor: '#000',
+                        height: '80%'
+                    },
+                }}
+            >
+                <form>
+                    <img src={logo} className="logoModal"/>
+                    <h2>Autenticação de dois fatores</h2>
+                    <div className="token">
+                        <div className="tokenInside">
+                            <input type="text" maxLength={1} minLength={1} style={{textAlign: 'center', fontSize: '20px', textTransform: 'uppercase'}}></input>
+                            <input type="text" maxLength={1} minLength={1} style={{textAlign: 'center', fontSize: '20px', textTransform: 'uppercase'}}></input>
+                            <input type="text" maxLength={1} minLength={1} style={{textAlign: 'center', fontSize: '20px', textTransform: 'uppercase'}}></input>
+                        </div>
+                        <div className="tokenInside">
+                            <input type="text" maxLength={1} minLength={1} style={{textAlign: 'center', fontSize: '20px', textTransform: 'uppercase'}}></input>
+                            <input type="text" maxLength={1} minLength={1} style={{textAlign: 'center', fontSize: '20px', textTransform: 'uppercase'}}></input>
+                            <input type="text" maxLength={1} minLength={1} style={{textAlign: 'center', fontSize: '20px', textTransform: 'uppercase'}}></input>
+                        </div>
+                    </div>
+                    <p>Uma mensagem com um código de verificação foi enviada para seu e-mail. Insira o código para continuar.</p>
+                    <div className="reenvio">
+                        <h4>Não recebeu um código de verificação?</h4>
+                        <h4 id="reenvio2" >Enviar novamente</h4>
+                    </div>
+                </form>
 
             </Modal>
             <section className="form-container">
-                <form class="form cadastro"  onSubmit={handleSubmit}>
+                <form class="form cadastro">
                 <FontAwesomeIcon icon={faUser} id="person-icon" />
                     <h4>Cadastro</h4>
                     <div className="container-form-group">
@@ -129,8 +170,8 @@ export default function Cadastro(){
                         <p>Já possui conta? Faça <Link to="/signin"><strong>Login</strong></Link></p>
                     </div>
                     
-                    <button type="submit" class="btn btn-cadastrar">Cadastrar</button>
-                </form>//.ppp~~
+                    <button type="submit" className="btn btn-cadastrar" onClick={(e) => openModal(e)}>Cadastrar</button>
+                </form>
             </section>
             <Footer/>
         </div>
