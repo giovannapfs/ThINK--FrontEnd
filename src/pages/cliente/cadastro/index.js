@@ -80,7 +80,7 @@ export default function Cadastro(){
                 isOpen={isModalOpen}
                 onRequestClose={closeModal}
                 id="modal-cadastro"
-                contentLabel="Detalhes da Tatuagem"
+                contentLabel="Autenticação de dois fatores"
                 style={{
                     overlay: {
                         backgroundColor: 'rgba(0, 0, 0, 0.5)', 
