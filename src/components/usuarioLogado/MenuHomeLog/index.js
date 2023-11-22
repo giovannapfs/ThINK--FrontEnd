@@ -62,7 +62,7 @@ const Menu = () => {
         <Link to="/"><img src={logo} alt="Logo do projeto com o nome ThINK" /></Link>
         <ul>
           <li className="main-menu-item"><Link to="/signin">Login</Link></li>
-          <li className="main-menu-item"><Link to="/">Sobre nós</Link></li>
+          <li className="main-menu-item"><Link to="/contato">Contato</Link></li>
           <li className="main-submenu-item" onClick={toggleSubMenu}><Link to="">
             Meu perfil</Link>
             {isSubMenuOpen && (

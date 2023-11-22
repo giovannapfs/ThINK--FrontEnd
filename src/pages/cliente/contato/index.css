@@ -85,7 +85,7 @@
   }
 
   .col-full #mensagem {
-    width: 100%;
+    width: 100% !important;
     height: 100px;
     resize: none;
   }
@@ -173,6 +173,7 @@ label {
     .form {
       max-width: 900px; 
       margin: 5% auto; 
+      height: auto;
     }
   
     .container-form-group {

@@ -55,7 +55,7 @@ export default function Cadastro(){
     
 
     const validationSchema = Yup.object({
-        nome: Yup.string().min(3, "O nome deve ter pelo menos 3 caracteres").required("Campo obrigatório"),
+        nome: Yup.string().min(2, "O nome deve ter pelo menos 2 caracteres").required("Campo obrigatório"),
         email: Yup.string().email("E-mail inválido").required("Campo obrigatório"),
         telefone: Yup.string().required("Campo obrigatório"),
         idade: Yup.number().min(18, "A idade deve ser igual ou maior que 18").required("Campo obrigatório"),

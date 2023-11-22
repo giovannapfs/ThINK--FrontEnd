@@ -3,6 +3,10 @@ import MenuLogado from "../../components/usuarioLogado/MenuHomeLog";
 import Footer from '../../components/Footer';
 import { Link } from 'react-router-dom';
 import { hotjar } from 'react-hotjar';
+import MaskedInput from 'react-input-mask';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import ScrollTrigger from 'react-scroll-trigger';
 
 import '../../styleGlobal.css';
 import './index.css';
@@ -25,9 +29,32 @@ export default function Home(){
         setIsUserLoggedIn(userType === "cliente");
     }, []);
 
+    const validationSchema = Yup.object({
+        nome: Yup.string().min(2, "O nome deve ter pelo menos 2 caracteres").required("Campo obrigatório"),
+        email: Yup.string().email("E-mail inválido").required("Campo obrigatório"),
+        telefone: Yup.string().required("Campo obrigatório"),
+    });
+
+    const formik = useFormik({
+        initialValues: {
+            nome: "",
+            email: "",
+            telefone: "",
+        },
+
+    });
+    const handleScroll = () => {
+        // Lógica a ser executada quando o usuário rolar para baixo
+        console.log('Rolou para baixo!');
+      };
+
     return (
         <div className="containerHome">
-            
+                <div>
+                <ScrollTrigger onEnter={handleScroll}>
+                    <div className="seta-para-baixo">↓</div>
+                </ScrollTrigger>
+                </div>
             <div className="containerPrincipal">
                 <div id="imagemPrincipal">
                  <MenuLogado />
@@ -146,13 +173,48 @@ export default function Home(){
                     <div className="mensagemContainer">
                         <div className="mensagemFormGeral">
                             <div>
-                                <input className="input" type="text" id="nome" name="nome" placeholder="Nome" required/>
+                                <input 
+                                className="input" 
+                                type="text" 
+                                id="nome" 
+                                name="nome" 
+                                placeholder="Nome" required
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.nome}/>
+                                {formik.touched.nome && formik.errors.nome ? (
+                                <div className="avisoForm">{formik.errors.nome}</div>
+                            ) : null} 
+                            
                             </div>
                             <div>
-                                <input className="input" type="tel" id="telefone" name="telefone" placeholder="WhatsApp" required/>
+                                <input className="input" 
+                                type="tel" 
+                                id="telefone" 
+                                name="telefone" 
+                                placeholder="WhatsApp" required
+                                mask="(99) 99999-9999"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.telefone}
+                                />
+                                {formik.touched.telefone && formik.errors.telefone ? (
+                                <div className="avisoForm">{formik.errors.telefone}</div>
+                            ) : null}
                             </div>
                             <div >
-                                <input className="input" type="email" id="email" name="email" placeholder="E-mail" required/>
+                                <input className="input" 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="E-mail" required
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.email}
+                                />
+                                {formik.touched.email && formik.errors.email ? (
+                                <div className="avisoForm">{formik.errors.email}</div>
+                            ) : null}  
                             </div>
                             <div>
                                 <select id="tipoTattoo" name="Tipo de Tattoo">
