@@ -33,6 +33,27 @@ export default function Cadastro(){
         setIsModalOpen(false);
     };
 
+    const [passwordErrors, setPasswordErrors] = useState({
+        length: false,
+        uppercase: false,
+        lowercase: false,
+        number: false,
+        specialChar: false,
+    });
+
+    const validatePassword = (value) => {
+        const errors = {
+            length: value.length >= 6,
+            uppercase: /[A-Z]/.test(value),
+            lowercase: /[a-z]/.test(value),
+            number: /\d/.test(value),
+            specialChar: /[!@#$%^&*()_+]/.test(value),
+        };
+    
+        setPasswordErrors(errors);
+    };
+    
+
     const validationSchema = Yup.object({
         nome: Yup.string().min(3, "O nome deve ter pelo menos 3 caracteres").required("Campo obrigatório"),
         email: Yup.string().email("E-mail inválido").required("Campo obrigatório"),
@@ -179,28 +200,50 @@ export default function Cadastro(){
                         </div>
                         <div class="form-group">
                         <input
-                                className="input"
-                                type="password"
-                                id="senha"
-                                name="senha"
-                                placeholder="Senha"
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
-                                value={formik.values.senha}
-                            />
-                            {formik.touched.senha && formik.errors.senha ? (
-                                <div className="avisoForm">{formik.errors.senha}</div>
-                            ) : null}
+                        className="input"
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        placeholder="Senha"
+                        onChange={(e) => {
+                            formik.handleChange(e);
+                            validatePassword(e.target.value);
+                        }}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.senha}
+                    />
+                    {formik.touched.senha && formik.values.senha === "" && (
+                        <div className="avisoForm">Campo obrigatório</div>
+                    )}
+                            {formik.touched.senha && (
+                            <div className="avisoForm">
+                                {passwordErrors.length || passwordErrors.uppercase || passwordErrors.lowercase || passwordErrors.number || passwordErrors.specialChar ? (
+                                    <>
+                                        {!passwordErrors.length && <div>A senha deve ter pelo menos 6 caracteres.</div>}
+                                        {!passwordErrors.uppercase && <div>A senha deve conter pelo menos uma letra maiúscula.</div>}
+                                        {!passwordErrors.lowercase && <div>A senha deve conter pelo menos uma letra minúscula.</div>}
+                                        {!passwordErrors.number && <div>A senha deve conter pelo menos um número.</div>}
+                                        {!passwordErrors.specialChar && <div>A senha deve conter pelo menos um caractere especial.</div>}
+                                    </>
+                                ) : (
+                                    <div>&nbsp;</div>
+                                )}
+                            </div>
+                        )}
                         </div>
                         <p>Já possui conta? Faça <Link to="/signin"><strong>Login</strong></Link></p>
                     </div>
                     
-                    <button type="button" className="btn btn-cadastrar" onClick={(e) => {
-        
-        if (formik.isValid) {
-            openModal(e);
-        }
-    }}>Cadastrar</button>
+                    <button
+                        type="button"
+                        className="btn btn-cadastrar"
+                        onClick={(e) => {
+                            formik.handleSubmit(); // Validação do formulário
+                            if (formik.isValid && Object.keys(passwordErrors).every((key) => passwordErrors[key])) {
+                                openModal(e); // Abrir o modal se o formulário for válido e a senha atender aos critérios
+                            }
+                        }}
+                    >Cadastrar</button>
                 </form>
             </section>
             <Footer/>
