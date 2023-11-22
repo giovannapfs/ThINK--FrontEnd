@@ -76,6 +76,8 @@ label {
 .avisoForm {
   font-size: smaller;
   margin: 10px 0 !important;
+  color: red;
+  margin-bottom: -35px !important;
 }
 
 form{
@@ -226,6 +228,10 @@ form h4{
 
     .token{
       gap: 0.5rem;
+    }
+
+    .avisoForm {
+      margin-bottom: -10px !important;
     }
   }
 

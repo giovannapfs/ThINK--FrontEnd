@@ -5,6 +5,8 @@ import Footer from '../../../components/Footer';
 import { hotjar } from "react-hotjar";
 import MaskedInput from 'react-input-mask';
 import logo from "../../../assets/icones/logo-removebg-preview 1.png"
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 import Modal from 'react-modal';
 
@@ -28,47 +30,39 @@ export default function Cadastro(){
     };
 
     const closeModal = () => {
-       
         setIsModalOpen(false);
     };
+
+    const validationSchema = Yup.object({
+        nome: Yup.string().min(3, "O nome deve ter pelo menos 3 caracteres").required("Campo obrigatório"),
+        email: Yup.string().email("E-mail inválido").required("Campo obrigatório"),
+        telefone: Yup.string().required("Campo obrigatório"),
+        idade: Yup.number().min(18, "A idade deve ser igual ou maior que 18").required("Campo obrigatório"),
+        senha: Yup.string()
+        .min(6, "A senha deve ter pelo menos 6 caracteres")
+        .matches(
+            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]+$/,
+            "A senha deve conter pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere especial"
+        )
+        .required("Campo obrigatório"),
+    });
+
+    const formik = useFormik({
+        initialValues: {
+            nome: "",
+            email: "",
+            telefone: "",
+            idade: "",
+            senha: "",
+        },
+        validationSchema: validationSchema,
+        onSubmit: (values) => {
+            // Aqui você pode adicionar lógica para enviar os dados do formulário
+            // e abrir o modal se necessário
+            openModal();
+        },
+    });
     
-
-    //validação de campos de senha
-    const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
-    const [isPasswordValid, setIsPasswordValid] = useState(false);
-
-    const handlePasswordChange = (e) => {
-        const newPassword = e.target.value;
-        setPassword(newPassword);
-        validatePassword(newPassword);
-    };
-
-    const validatePassword = (password) => {
-        const minLength = 6;
-        const hasUppercase = /[A-Z]/.test(password);
-        const hasLowercase = /[a-z]/.test(password);
-        const hasNumber = /\d/.test(password);
-    
-        let error = '';
-    
-        if (password.length < minLength) {
-            error = `A senha deve ter pelo menos ${minLength} caracteres.`;
-        } else if (!hasUppercase) {
-            error = 'A senha deve conter pelo menos uma letra maiúscula.';
-        } else if (!hasLowercase) {
-            error = 'A senha deve conter pelo menos uma letra minúscula.';
-        } else if (!hasNumber) {
-            error = 'A senha deve conter pelo menos um número.';
-        }
-
-        setErrorMessage(error);
-        setIsPasswordValid(!error);
-    };
-
-    const [idade, setIdade] = useState('');
-
-
     return (
         <div className="container container-cadastro">
             <MenuLogado /> 
@@ -118,59 +112,95 @@ export default function Cadastro(){
 
             </Modal>
             <section className="form-container">
-                <form class="form cadastro">
+                <form class="form cadastro" onSubmit={formik.handleSubmit}>
                 <FontAwesomeIcon icon={faUser} id="person-icon" />
                     <h4>Cadastro</h4>
                     <div className="container-form-group">
                         <div class="form-group">
-                        
-                            <input className="input" type="text" id="nome" name="nome" placeholder="Nome" required />
-                        </div>
-                        <div class="form-group">
-                            
-                            <input className="input" type="email" id="email" name="email" placeholder="E-mail" required />
-                        </div>
-                        <div class="form-group">
-                            <MaskedInput
-                            className="input"
-                            type="tel"
-                            id="telefone"
-                            name="telefone"
-                            placeholder="Telefone"
-                            mask="(99) 99999-9999"
-                            maskChar="_"
-                            required
+                        <input
+                                className="input"
+                                type="text"
+                                id="nome"
+                                name="nome"
+                                placeholder="Nome"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.nome}
                             />
-                        </div>
-                        <div class="form-group">
-                            <MaskedInput
-                            className="input" 
-                            type="text" 
-                            id="idade" 
-                            name="idade" 
-                            placeholder="Idade" 
-                            mask="99"
-                            maskChar="_"
-                            required 
-                            />
+                            {formik.touched.nome && formik.errors.nome ? (
+                                <div className="avisoForm">{formik.errors.nome}</div>
+                            ) : null}
                         </div>
                         <div class="form-group">
                         <input
-                            className="input"
-                            type="password"
-                            id="senha"
-                            name="senha"
-                            placeholder="Senha"
-                            value={password}
-                            onChange={handlePasswordChange}
-                            required
-                        />
-                        <p className="avisoForm" style={{ color: 'red' }}>{errorMessage}</p>
+                                className="input"
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="E-mail"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.email}
+                            />
+                            {formik.touched.email && formik.errors.email ? (
+                                <div className="avisoForm">{formik.errors.email}</div>
+                            ) : null}
+                        </div>
+                        <div class="form-group">
+                        <MaskedInput
+                                className="input"
+                                type="tel"
+                                id="telefone"
+                                name="telefone"
+                                placeholder="Telefone"
+                                mask="(99) 99999-9999"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.telefone}
+                            />
+                            {formik.touched.telefone && formik.errors.telefone ? (
+                                <div className="avisoForm">{formik.errors.telefone}</div>
+                            ) : null}
+                        </div>
+                        <div class="form-group">
+                        <input
+                                className="input"
+                                type="number"
+                                id="idade"
+                                name="idade"
+                                placeholder="Idade"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.idade}
+                            />
+                            {formik.touched.idade && formik.errors.idade ? (
+                                <div className="avisoForm">{formik.errors.idade}</div>
+                            ) : null}
+                        </div>
+                        <div class="form-group">
+                        <input
+                                className="input"
+                                type="password"
+                                id="senha"
+                                name="senha"
+                                placeholder="Senha"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.senha}
+                            />
+                            {formik.touched.senha && formik.errors.senha ? (
+                                <div className="avisoForm">{formik.errors.senha}</div>
+                            ) : null}
                         </div>
                         <p>Já possui conta? Faça <Link to="/signin"><strong>Login</strong></Link></p>
                     </div>
                     
-                    <button type="submit" className="btn btn-cadastrar" onClick={(e) => openModal(e)}>Cadastrar</button>
+                    <button type="button" className="btn btn-cadastrar" onClick={(e) => {
+        
+        if (formik.isValid) {
+            openModal(e);
+        }
+    }}>Cadastrar</button>
                 </form>
             </section>
             <Footer/>
