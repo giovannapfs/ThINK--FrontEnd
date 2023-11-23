@@ -88,8 +88,8 @@ const Menu = () => {
             <li className="main-menu-item"><Link to="/portfolio">Portfólio</Link></li>
             <li className="main-menu-item"><Link to="/flashtattoo">Flash tattoo</Link></li>
             <li className="main-menu-item"><Link to="/agenda">Agenda</Link></li>
+            <li className="main-menu-item"><Link to="/login">Login</Link></li>
             <li className="main-menu-item"><Link to="/contato">Contato</Link></li>
-            <li className="main-menu-item"><Link to="/">Sobre nós</Link></li>
             <br></br>
             <li className="main-menu-item">Meu perfil
               <ul className="sub-menuHome">

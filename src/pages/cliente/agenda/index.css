@@ -267,22 +267,31 @@ input[type="checkbox"] {
 @media (max-width: 768px) {
     .container-tipos, .flex {
       flex-direction: column; 
+      display: flex;
     }
 
     .flex button{
         width: 50%;
     }
   
-    .section {
-      width: 50%; 
+    .section, .section:nth-child(3), #orcamento  {
+      width: 100%; 
     
     }
     .btn-agendamentos{
         width: 40%;
         align-self: center;
       }
-    
+      .section:nth-child(1) {
+        margin-top: 35rem;
+        margin-left: 0;
+      }
+      .section:nth-child(2){
+        margin-top: 0;
+        margin-left: 0;
+      }
   }
+
 @media (max-width: 450px){
     .calendar-container{
         width: 100%;

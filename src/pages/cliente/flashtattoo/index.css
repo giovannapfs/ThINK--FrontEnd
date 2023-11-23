@@ -64,13 +64,14 @@
     align-items: center;
 }
 
-#modal-info {
+#modal-info-flashtattoo {
     display: flex;
     margin-top: 5%;
 }
 
-#modal-info img {
-    width: 45%;
+#modal-info-flashtattoo img {
+    width: 50%;
+    max-width: 280px;
 }
 
 .modal-close-button {
@@ -238,7 +239,7 @@
         flex-direction: column;
     }
 
-    #modal-info img {
+    #modal-info-flashtattoo img {
         width: 100%;
     }
 
@@ -292,13 +293,13 @@
         align-items: center;
     }
 
-    #modal-info {
+    #modal-info-flashtattoo{
         display: flex;
         flex-direction: column !important;
         margin-top: 5%;
     }
 
-    #modal-info img {
+    #modal-info-flashtattoo img {
         width: 80%;
     }
 

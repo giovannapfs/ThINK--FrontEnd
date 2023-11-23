@@ -184,7 +184,7 @@ const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
                 
                 {selectedTattoo && (
                     <div className="modal-tattoo">
-                        <div id="modal-info">
+                        <div id="modal-info-flashtattoo">
                             <img src={selectedTattoo.imagem} alt={selectedTattoo.nome} />
                             <div className="modal-info-description">
                                 <h3 className="txt-white h3">{selectedTattoo.nome}</h3>
