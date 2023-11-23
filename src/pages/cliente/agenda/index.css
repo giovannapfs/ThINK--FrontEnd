@@ -290,6 +290,9 @@ input[type="checkbox"] {
         margin-top: 0;
         margin-left: 0;
       }
+      .section:nth-child(3){
+        margin-left: 0;
+      }
   }
 
 @media (max-width: 450px){
