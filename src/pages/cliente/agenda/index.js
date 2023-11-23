@@ -126,6 +126,86 @@ const handleSubmit = () =>{
     }
   };
 
+  const [selectedCheckboxes, setSelectedCheckboxes] = useState({
+    tamanho: [],
+    estilo: [],
+    cores: [],
+  });
+
+  const [valorEstimado, setValorEstimado] = useState(0);
+
+  const valoresPorCategoria = {
+    tamanho: {
+      'Até 10 cm': 70,
+      'De 11 cm a 20 cm': 90,
+      'De 21 cm a 30 cm': 100,
+      'De 31 cm a 50 cm': 150,
+      'De 51 cm a 60 cm': 200,
+      'De 61 cm a 70 cm': 290,
+      'Maior que 70 cm': 310,
+    },
+    estilo: {
+      'Watercolor': 30,
+      'Pontilismo': 40,
+      'Geométrico': 50,
+      'Maori': 90,
+      'Realismo': 100,
+      'Old School': 70,
+      'Minimalismo': 60,
+    },
+    cores: {
+      'Preto e Branco': 50,
+      'Vermelho': 60,
+      'Colorido': 100,
+      'Preto - Blackout': 180,
+      'Preto - Blackwork': 150,
+    },
+  };
+
+
+  const handleCheckboxClick = (categoria, opcao, isChecked) => {
+    const checkboxesAtualizados = { ...selectedCheckboxes };
+
+    if (isChecked) {
+      checkboxesAtualizados[categoria] = [...checkboxesAtualizados[categoria], opcao];
+    } else {
+      checkboxesAtualizados[categoria] = checkboxesAtualizados[categoria].filter(
+        (item) => item !== opcao
+      );
+    }
+
+    setSelectedCheckboxes(checkboxesAtualizados);
+    atualizarValorEstimado(checkboxesAtualizados);
+  };
+
+  const atualizarValorEstimado = (checkboxes) => {
+    let novoValor = 0;
+
+    for (const categoria in checkboxes) {
+      const opcoesSelecionadas = checkboxes[categoria];
+      const valoresPorOpcao = valoresPorCategoria[categoria];
+
+      novoValor += opcoesSelecionadas.reduce((acumulador, opcao) => {
+        return acumulador + valoresPorOpcao[opcao];
+      }, 0);
+    }
+
+    setValorEstimado(novoValor);
+  };
+
+  const [descricao, setDescricao] = useState('');
+
+  const handleDescricaoChange = (event) => {
+    setDescricao(event.target.value);
+  };
+
+  const formatarData = (data, hora) => {
+    const opcoesData = { day: 'numeric', month: 'long', year: 'numeric' };
+    const dataFormatada = data.toLocaleDateString('pt-BR', opcoesData);
+
+    return `${dataFormatada} às ${hora}`;
+  };
+
     return (
         <div className='container'>
             <MenuLogado /> 
@@ -220,7 +300,7 @@ const handleSubmit = () =>{
                 X
                 </button>
                   <div id="modal-agenda">
-                  <h3 className='txt-white'>01 setembro 2023</h3>
+                  <h3 className='txt-white'>{formatarData(selectedDate, selectedTime)}</h3>
                         <div>
                          
                           <div className=' file'>
@@ -246,7 +326,7 @@ const handleSubmit = () =>{
                             <h3 className='txt-white'>Observações:</h3>
                             <div class="form-group col-full">
                             
-                              <textarea style={{backgroundColor: "#0f0f0f"}} className="input" id="mensagem" name="mensagem" placeholder="Obervação: (Opcional)" required></textarea>
+                              <textarea style={{backgroundColor: "#0f0f0f"}} className="input" id="mensagem" name="mensagem" placeholder="Obervação: (Opcional)" value={descricao} onChange={handleDescricaoChange} ></textarea>
                             </div>
                         </div>
                   </div>
@@ -285,25 +365,45 @@ const handleSubmit = () =>{
                       <h3>Tamanho:</h3>
                       <div class="options">
                         <label>
-                          <input type="checkbox"/> Até 10 cm
+                          <input type="checkbox" 
+                          checked={selectedCheckboxes.tamanho.includes('Até 10 cm')}
+                          onChange={(e) => handleCheckboxClick('tamanho', 'Até 10 cm', e.target.checked)}/> Até 10 cm
                         </label>
                         <label>
-                          <input type="checkbox"/> De 11 cm a 20 cm
+                          <input type="checkbox" 
+                          checked={selectedCheckboxes.tamanho.includes('De 11 cm a 20 cm')}
+                          onChange={(e) => handleCheckboxClick('tamanho', 'De 11 cm a 20 cm', e.target.checked)}
+                          /> De 11 cm a 20 cm
                         </label>
                         <label>
-                          <input type="checkbox"/> De 21 cm a 30 cm
+                          <input type="checkbox" 
+                          checked={selectedCheckboxes.tamanho.includes('De 21 cm a 30 cm')}
+                          onChange={(e) => handleCheckboxClick('tamanho', 'De 21 cm a 30 cm', e.target.checked)}
+                        /> De 21 cm a 30 cm
                         </label>
                         <label>
-                          <input type="checkbox"/> De 31 cm a 50 cm
+                          <input type="checkbox" 
+                          checked={selectedCheckboxes.tamanho.includes('De 31 cm a 50 cm')}
+                          onChange={(e) => handleCheckboxClick('tamanho', 'De 31 cm a 50 cm', e.target.checked)}
+                          /> De 31 cm a 50 cm
                         </label>
                          <label>
-                          <input type="checkbox"/> De 51 cm a 60 cm
+                          <input type="checkbox" 
+                          checked={selectedCheckboxes.tamanho.includes('De 51 cm a 60 cm')}
+                          onChange={(e) => handleCheckboxClick('tamanho', 'De 51 cm a 60 cm', e.target.checked)}
+                          /> De 51 cm a 60 cm
                         </label>
                          <label>
-                          <input type="checkbox"/> De 61 cm a 70 cm
+                          <input type="checkbox" 
+                          checked={selectedCheckboxes.tamanho.includes('De 61 cm a 70 cm')}
+                          onChange={(e) => handleCheckboxClick('tamanho', 'De 61 cm a 70 cm', e.target.checked)}
+                          /> De 61 cm a 70 cm
                         </label>
                         <label>
-                          <input type="checkbox"/> Maior que 70 cm
+                          <input type="checkbox" 
+                          checked={selectedCheckboxes.tamanho.includes('Maior que 70 cm')}
+                          onChange={(e) => handleCheckboxClick('tamanho', 'Maior que 70 cm', e.target.checked)}
+                          /> Maior que 70 cm
                         </label>
                       </div>
                     </div>
@@ -312,25 +412,39 @@ const handleSubmit = () =>{
                       <h3>Estilo:</h3>
                       <div class="options">
                         <label>
-                          <input type="checkbox"/> Watercolor
+                          <input type="checkbox" 
+                          checked={selectedCheckboxes.estilo.includes('Watercolor')}
+                          onChange={(e) => handleCheckboxClick('estilo', 'Watercolor', e.target.checked)}/> Watercolor
                         </label>
                         <label>
-                          <input type="checkbox"/> Pontilismo
+                          <input type="checkbox" 
+                          checked={selectedCheckboxes.estilo.includes('Pontilismo')}
+                          onChange={(e) => handleCheckboxClick('estilo', 'Pontilismo', e.target.checked)}/> Pontilismo
                         </label>
                         <label>
-                          <input type="checkbox"/> Geométrico
+                          <input type="checkbox" 
+                          checked={selectedCheckboxes.estilo.includes('Geométrico')}
+                          onChange={(e) => handleCheckboxClick('estilo', 'Geométrico', e.target.checked)}/> Geométrico
                         </label>
                         <label>
-                          <input type="checkbox"/> Maori
+                          <input type="checkbox" 
+                          checked={selectedCheckboxes.estilo.includes('Maori')}
+                          onChange={(e) => handleCheckboxClick('estilo', 'Maori', e.target.checked)}/> Maori
                         </label>
                         <label>
-                          <input type="checkbox"/> Realismo
+                          <input type="checkbox" 
+                          checked={selectedCheckboxes.estilo.includes('Realismo')}
+                          onChange={(e) => handleCheckboxClick('estilo', 'Realismo', e.target.checked)}/> Realismo
                         </label>
                         <label>
-                          <input type="checkbox"/> Old School
+                          <input type="checkbox"
+                          checked={selectedCheckboxes.estilo.includes('Old School')}
+                          onChange={(e) => handleCheckboxClick('estilo', 'Old School', e.target.checked)}/> Old School
                         </label>
                         <label>
-                          <input type="checkbox"/> Minimalismo
+                          <input type="checkbox" 
+                          checked={selectedCheckboxes.estilo.includes('Minimalismo')}
+                          onChange={(e) => handleCheckboxClick('estilo', 'Minimalismo', e.target.checked)}/> Minimalismo
                         </label>
                       </div>
                     </div>
@@ -339,26 +453,36 @@ const handleSubmit = () =>{
                       <h3>Cores:</h3>
                       <div class="options">
                         <label>
-                          <input type="checkbox"/> Preto e Branco
+                          <input type="checkbox" 
+                          checked={selectedCheckboxes.cores.includes('Preto e Branco')}
+                          onChange={(e) => handleCheckboxClick('cores', 'Preto e Branco', e.target.checked)}/> Preto e Branco
                         </label>
                         <label>
-                          <input type="checkbox"/> Vermelho
+                          <input type="checkbox" 
+                          checked={selectedCheckboxes.cores.includes('Vermelho')}
+                          onChange={(e) => handleCheckboxClick('cores', 'Vermelho', e.target.checked)}/> Vermelho
                         </label>
                         <label>
-                          <input type="checkbox"/> Colorido
+                          <input type="checkbox" 
+                          checked={selectedCheckboxes.cores.includes('Colorido')}
+                          onChange={(e) => handleCheckboxClick('cores', 'Colorido', e.target.checked)}/> Colorido
                         </label>
                         <label>
-                          <input type="checkbox"/> Preto - Blackout
+                          <input type="checkbox" 
+                          checked={selectedCheckboxes.cores.includes('Preto - Blackout')}
+                          onChange={(e) => handleCheckboxClick('cores', 'Preto - Blackout', e.target.checked)}/> Preto - Blackout
                         </label>
                         <label>
-                          <input type="checkbox"/> Preto - Blacwork
+                          <input type="checkbox" 
+                          checked={selectedCheckboxes.cores.includes('Preto - Blackwork')}
+                          onChange={(e) => handleCheckboxClick('cores', 'Preto - Blackwork', e.target.checked)}/> Preto - Blackwork
                         </label>
                       </div>
                     </div>
                     
                   </div>
                   <div id='orcamento'>
-                      <p>Valor estimado: R$ 00,00</p>
+                      <p>Valor estimado: R$ {valorEstimado.toFixed(2)}</p>
                     </div>
                   <div className="flex btn-container">
                     <button onClick={closeModal2} className="btn btn-voltar">Voltar</button>
@@ -386,7 +510,7 @@ const handleSubmit = () =>{
             >
                
                   <div id="modal-agenda">
-                  <h3 className='txt-white'>01 setembro 2023</h3>
+                  <h3 className='txt-white'>{formatarData(selectedDate, selectedTime)}</h3>
                         <div>
                          
                           <div className=' file'>
@@ -409,19 +533,19 @@ const handleSubmit = () =>{
                         </div>
                         <div id='info-tat'>
                           <h3 className='txt-white'>Tamanho</h3>
-                          <p id='info-p' className='txt-white'>X cm</p>
+                          <p id='info-p' className='txt-white'>{selectedCheckboxes.tamanho.join(', ')}</p>
 
                           <h3 className='txt-white'>Estilo</h3>
-                          <p id='info-p' className='txt-white'> Estilo x</p>
+                          <p id='info-p' className='txt-white'>{selectedCheckboxes.estilo.join(', ')}</p>
 
                           <h3 className='txt-white'>Cores</h3>
-                          <p id='info-p' className='txt-white'>Cores x</p></div>
+                          <p id='info-p' className='txt-white'>{selectedCheckboxes.cores.join(', ')}</p></div>
 
                         <div id="obs">
                             <h3 className='txt-white'>Imagem de Referência</h3>
                             <div class="form-group col-full">
                             
-                              <textarea style={{backgroundColor: "#0f0f0f"}} className="input" id="mensagem" name="mensagem" placeholder="Obervação: (Opcional)" required></textarea>
+                              <textarea style={{backgroundColor: "#0f0f0f"}} className="input" id="mensagem" name="mensagem" placeholder="Obervação: (Opcional)" value={descricao}></textarea>
                             </div>
                         </div>
                         
@@ -430,7 +554,7 @@ const handleSubmit = () =>{
                   <div className="flex btn-container">
                     <button onClick={closeModal3} 
                     className="btn btn-voltar">Voltar</button>
-                    <button onClick={handleSubmit} className="btn btn-cadastrar">Agenda</button>
+                    <button onClick={handleSubmit} className="btn btn-cadastrar">Agendar</button>
                   </div>
             </Modal>
             <Footer/>
