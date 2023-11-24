@@ -202,7 +202,6 @@ export default function MinhasInformacoes(){
                                     type={mostrarSenha ? 'text' : 'password'}
                                     id="senha"
                                     value={senha}
-                                    
                                     readonly
                                 />
                                 <FontAwesomeIcon

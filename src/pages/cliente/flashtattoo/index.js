@@ -5,8 +5,6 @@ import MenuLogado from "../../../components/usuarioLogado/MenuLog";
 import Footer from '../../../components/Footer';
 import { hotjar } from "react-hotjar";
 
-import axios from "axios";
-
 import tatt1 from '../../../assets/flashTattoo/tattoo.png';
 import tatt2 from '../../../assets/flashTattoo/tattoo-2.png';
 import tatt3 from '../../../assets/flashTattoo/tattoo-3.png';

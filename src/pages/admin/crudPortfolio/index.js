@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Modal from 'react-modal';
 import { useNavigate } from 'react-router-dom';
 import Menu from '../../../components/admin/menuDashboard';
@@ -18,17 +18,6 @@ import './index.css'
 
 export default function CrudPortfolio() {
     const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
-
-     useEffect(() => {
-         const userType = localStorage.getItem("userType");
- 
-         if(!userType || userType === 'cliente'){
-             navigate('/signin');
-         } else if(userType === 'admin'){
-             setIsUserLoggedIn(userType === "admin");
-         }
-         
-     }, []); 
 
     const [portfolio, setPortfolio] = useState([
         {
@@ -200,7 +189,7 @@ export default function CrudPortfolio() {
 
                     {selectedPortfolio && (
                         <div className="modal-tatto">
-                            <div id="modal-info-portfolio">
+                            <div id="modal-info-portfolioAdmin">
                                 <img src={selectedPortfolio.imagem} alt={selectedPortfolio.nome} />
                                 <div className="modal-info-description">
                                     <div className="description">
@@ -364,7 +353,4 @@ export default function CrudPortfolio() {
 
         </div>
     )
-
-
-}
-;
+};

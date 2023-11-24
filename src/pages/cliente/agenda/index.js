@@ -25,7 +25,6 @@ import Footer from '../../../components/Footer';
 import '../../../styleGlobal.css';
 import './index.css';
 
-
 export default function Agenda(){
   useEffect(() => {
     hotjar.initialize(3738750, 6);
@@ -162,7 +161,6 @@ const handleSubmit = () =>{
     },
   };
 
-
   const handleCheckboxClick = (categoria, opcao, isChecked) => {
     const checkboxesAtualizados = { ...selectedCheckboxes };
 
@@ -262,8 +260,6 @@ const handleSubmit = () =>{
                   </DialogActions>
                 </Dialog>
               </ThemeProvider>
-              
-              
             </div>
             <button
             className='btn btn-agendamentos'
@@ -274,7 +270,7 @@ const handleSubmit = () =>{
           >
             Próximo
           </button>
-          </div>
+        </div>
 
           {/**Modais */}
 
@@ -302,7 +298,6 @@ const handleSubmit = () =>{
                   <div id="modal-agenda">
                   <h3 className='txt-white'>{formatarData(selectedDate, selectedTime)}</h3>
                         <div>
-                         
                           <div className=' file'>
                           <h3 className='txt-white'>Imagem de Referência</h3>
                             <input
@@ -325,7 +320,6 @@ const handleSubmit = () =>{
                         <div id="obs">
                             <h3 className='txt-white'>Observações:</h3>
                             <div class="form-group col-full">
-                            
                               <textarea style={{backgroundColor: "#0f0f0f"}} className="input" id="mensagem" name="mensagem" placeholder="Obervação: (Opcional)" value={descricao} onChange={handleDescricaoChange} ></textarea>
                             </div>
                         </div>
@@ -335,7 +329,6 @@ const handleSubmit = () =>{
                     <button onClick={openModal2} className="btn btn-cadastrar">Proximo</button>
                   </div>
             </Modal>
-
             <Modal
                 isOpen={isModalOpen2}
                 onRequestClose={closeModal2}
@@ -358,7 +351,6 @@ const handleSubmit = () =>{
                     },
                 }}
             >
-                 
                   <div class="container-tipos">
                     
                     <div class="section">
@@ -542,14 +534,11 @@ const handleSubmit = () =>{
                           <p id='info-p' className='txt-white'>{selectedCheckboxes.cores.join(', ')}</p></div>
 
                         <div id="obs">
-                            <h3 className='txt-white'>Imagem de Referência</h3>
+                            <h3 className='txt-white'>Observações</h3>
                             <div class="form-group col-full">
-                            
                               <textarea style={{backgroundColor: "#0f0f0f"}} className="input" id="mensagem" name="mensagem" placeholder="Obervação: (Opcional)" value={descricao}></textarea>
                             </div>
                         </div>
-                        
-
                   </div>
                   <div className="flex btn-container">
                     <button onClick={closeModal3} 

@@ -1,4 +1,4 @@
-import React,{Suspense, useEffect, useState} from "react";
+import React,{useEffect, useState} from "react";
 import MenuLogado from "../../components/usuarioLogado/MenuHomeLog";
 import Footer from '../../components/Footer';
 import { Link } from 'react-router-dom';
@@ -231,7 +231,7 @@ const buttonStylesUp = {
                             ) : null}
                             </div>
                             <div>
-                                <input className="input inputHome" 
+                                <MaskedInput className="input inputHome" 
                                 type="tel" 
                                 id="telefone" 
                                 name="telefone" 
@@ -280,7 +280,7 @@ const buttonStylesUp = {
                 </div>
             </div>
     {showScrollUpButton && (
-        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={buttonStylesUp}>
+        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={buttonStylesUp} id="buttonStylesUp">
           &#8593;
         </button>
       )}
@@ -289,6 +289,7 @@ const buttonStylesUp = {
         onClick={scrollToBottom}
         style={buttonStyles}
         className="bounce-animation"
+        id="buttonStyles"
       >
         &#8595;
       </button>

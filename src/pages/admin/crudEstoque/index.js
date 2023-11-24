@@ -21,17 +21,7 @@ import { set } from "date-fns";
 export default function CrudEstoque(){
     const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
      const navigate = useNavigate();
-    /*
-    useEffect(() => {
-        const userType = localStorage.getItem("userType");
 
-        if(!userType || userType === 'cliente'){
-            navigate('/signin');
-        }else if(userType === 'admin'){
-            setIsUserLoggedIn(userType === "admin");
-        }
-        
-    }, []);*/
     const [grupoEstoque, setGrupoEstoque] =useState([
         {
             id: 1,
@@ -411,9 +401,9 @@ export default function CrudEstoque(){
                         <input className="inputEstoque" type="date" id="dataValidade" name="validade"/>
                     </div>
                 </form>
-                <div className="btn-modal">
-                                <button onClick={closeModalAdd} className="btn btn-cadastrar">Adicionar</button>
-                                <button onClick={closeModalAdd} className="btn btn-cancelarAdmin">Cancelar</button>
+                <div className="btn-modalEstoque">
+                                <button onClick={closeModalAdd} className="btn btn-cadastrarEstoque">Adicionar</button>
+                                <button onClick={closeModalAdd} className="btn btn-cancelarEstoque">Cancelar</button>
                 </div>
             </Modal>
             </section>

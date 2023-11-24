@@ -50,8 +50,8 @@ margin-top: 65%;
     grid-template-columns: repeat(3, 1fr);
     color: white;
     text-align: center;
-  }
-  
+}
+
 .grid div h2{
     margin-top: 45%;
     margin-bottom: 45%;
@@ -91,7 +91,6 @@ margin-top: 65%;
     background-color: white;
     display: flex;
     flex-direction: column;
-
 }
 
 #tituloProjeto{
@@ -283,7 +282,6 @@ margin-top: 65%;
     margin-top: 5px !important;
     margin-left: 2% !important;
     margin-right: 2% !important;
-    margin-top: 5px !important;
 }
 
 select {
@@ -323,6 +321,17 @@ option{
 
 .alto-contraste .iconSeta{
     color: yellow;
+}
+
+.alto-contraste select {
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+.alto-contraste #buttonStylesUp, .alto-contraste #buttonStyles {
+    background-color: yellow !important;
+    color: black !important;
+    animation: none;
 }
 
 @keyframes bounce {
