@@ -21,8 +21,7 @@ import './index.css'
 export default function CrudFlashTattoo() {
     const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
-   
-     const [flashtatto, setFlashtatto] = useState([
+    const [flashtatto, setFlashtatto] = useState([
         {
             id: 1,
             nome: "Caveira Borboleta",
@@ -241,7 +240,7 @@ export default function CrudFlashTattoo() {
                                     <p className="txt-white">R$ 350.00</p>
                                 </div>
                             </div><div className="btn-modal">
-                                <button onClick={openModalEdit} className="btn btn-editar">Editar</button>
+                                <button onClick={openModalEdit} className="btn btn-editarFT">Editar</button>
                                 <button onClick={closeModal} className="btn btn-cancelarAdmin">Cancelar</button>
 
                             </div>
@@ -330,7 +329,7 @@ export default function CrudFlashTattoo() {
                                         5 cm
                                     </button>
                                     <p></p>
-                                    <input className="inputv" type="number" id="tamanhope" name="tamanhope" placeholder="R$" />
+                                    <input className="inputp" type="number" id="tamanhope" name="tamanhope" placeholder="R$" />
                                 </div>
                                 <div id="second-inf">
                                     <button 
@@ -340,7 +339,7 @@ export default function CrudFlashTattoo() {
                                         10 cm
                                     </button>
                                     <p></p>
-                                    <input className="inputv" type="number" id="tamanhome" name="tamanhome" placeholder="R$" />
+                                    <input className="inputp" type="number" id="tamanhome" name="tamanhome" placeholder="R$" />
                                 </div>
                                 <div id="third-inf">
                                     <button 
@@ -350,13 +349,13 @@ export default function CrudFlashTattoo() {
                                         15 cm
                                     </button>
                                     <p></p>
-                                    <input className="inputv" type="number" id="tamanhoge" name="tamanhoge" placeholder="R$" />
+                                    <input className="inputp" type="number" id="tamanhoge" name="tamanhoge" placeholder="R$" />
                                 </div>
                             </div>
                         </div>
 
                         <div className="btn-modal">
-                            <button onClick={closeModalEdit} className="btn btn-adicionar">Adicionar</button>
+                            <button onClick={closeModalEdit} className="btn btn-adicionarFT">Adicionar</button>
                             <button onClick={closeModalEdit} className="btn btn-cancelarAdmin">Cancelar</button>
 
                         </div>
@@ -457,7 +456,7 @@ export default function CrudFlashTattoo() {
                         </div>
 
                         <div className="btn-modal">
-                            <button onClick={closeModalAdd} className="btn btn-adicionar">Adicionar</button>
+                            <button onClick={closeModalAdd} className="btn btn-adicionarADM">Adicionar</button>
                             <button onClick={closeModalAdd} className="btn btn-cancelarAdmin">Cancelar</button>
                         </div>
                     </div>

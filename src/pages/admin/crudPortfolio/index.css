@@ -70,7 +70,6 @@
 .modal-info-description {
     width: 100%;
     max-width: 300px;
-
 }
 
 #modal-add-tatto{
@@ -87,12 +86,12 @@
     margin-top: 5%;   
 }
 
-.btn-modal{
+.btn-modalP{
     display: flex;
     padding-inline: 20%;
     justify-content:space-between;
     align-items: first baseline;
-    
+    gap: 2rem;
 }
 
 .inputp{
@@ -216,6 +215,23 @@
     }
 }
 
+@media (max-width: 980px){
+    #modal-info-portfolioAdmin{
+        flex-direction: column;
+    }
+    .modal-info-description .description {
+        margin-left: 0;
+    }
+    .modal-info-description .description h3 {
+        margin-bottom: 0;
+    }
+    .btn-modalP{
+        align-items: center !important;
+        padding-inline: 0;
+        width: 100% !important; 
+    }
+}
+
 
 @media (max-width: 875px) {
     .portfolio {
@@ -234,7 +250,6 @@
         width: 72%;
         margin-left: 5%;
     }
-
 }
 
 @media (max-width: 800px) {
@@ -247,21 +262,11 @@
         align-items: center;
     }
     .valores-port.portfolio p{
-    
         font-size: 0.9rem;
     }
     #modal-edit-tatto {
         flex-direction: column;
         margin-bottom: 2%;
-    }
-    .modal-info-description .description {
-        margin-left: 0;
-    }
-    #modal-info-portfolioAdmin{
-        flex-direction: column;
-    }
-    .modal-info-description .description h3 {
-        margin-bottom: 0;
     }
     #modal-add-tatto {
         flex-direction: column;
@@ -427,7 +432,7 @@
         font-size: 0.9rem;
     }
     
-    .btn-modal{
+    .btn-modalP{
     width: 150%;
     flex-direction: column;    
 }

@@ -91,16 +91,12 @@
     padding-inline: 20%;
     justify-content:space-between;
     align-items: first baseline;
-    
-}
-
-.inputp{
-    margin-top: 10px;
-    width: 100%;
-
+    gap: 2rem;
 }
 
 .inputp {
+    margin-top: 10px;
+    width: 100%;
     padding: 20px;
     border: none;
     border-radius: 5px;
@@ -108,7 +104,6 @@
     color: #262626;
     font-size: 16px;
     background-color: rgba(0, 0, 0, 0.5);
-    width: 50%;
     height: 50px;
     color: white;
 
@@ -209,8 +204,33 @@
     border: 1px solid white;
 }
 
+.btn-editarFT{
+    background-color: transparent;
+    border: 2px dashed var(--var-txt-lilas);
+    color: var(--var-lilas);
+    transition: 0.2s ease-in-out;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70%;
+}
+
+.btn-editarFT:hover{
+    color: white;
+}
+
+.btn-adicionarFT{
+    width: 70%
+}
+
 
 /* Estilos para tablets */
+@media (max-width: 1300px) {
+    .aviso{
+        margin-left: 25vw !important;
+    }
+}
+
 @media (max-width: 1124px) {
     .CrudFlashtattoo {
         grid-template-columns: repeat(3, 1fr);
@@ -227,8 +247,27 @@
         width: 70%;
         margin-left: 5%;
     }
+    #modal-info-tatto{
+        flex-direction: column;
+        margin-left: 5%;
+    }
+    .description{
+        margin-left: 0 !important;
+    }
+    .btn-modal{
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
+@media (max-width: 1026px){
+    #modal-edit-tatto{
+        flex-direction: column;
+    }
+    .aviso{
+        margin-left: 30% !important;
+    }
+}
 
 @media (max-width: 875px) {
     .CrudFlashtattoo {
@@ -251,8 +290,6 @@
 }
 
 @media (max-width: 800px) {
-
-
     .valores-port.CrudFlashtattoo {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -264,11 +301,9 @@
 
 
     .valores-port.CrudFlashtattoo p{
-    
         font-size: 0.9rem;
     }
     
-
 }
 
 /*Estilo para mobile*/

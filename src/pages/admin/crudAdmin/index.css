@@ -7,7 +7,7 @@
     height: auto;
     margin-top: 15%;
     margin-left: 25%;
-  } 
+} 
 
 .perfis{
     display: flex;
@@ -84,19 +84,29 @@ flex-direction: column;
     bottom: 0;
 }
 
-
 .btn-cancelarAdmin{
     background: transparent;
     border: 2px solid var(--var-txt-lilas);
     color: var(--var-lilas);
-    width: 40%;
-  }
-  
-  .btn-cancelarAdmin:hover{
+    width: 70%;
+}
+
+.btn-cancelarAdmin:hover{
     color: white;
-  }
-  
+}
+
+.btn-adicionarADM{
+    width: 70%;
+}
+
 /*RESPONSIVIDADE*/
+@media (max-width: 1196px){
+    .inputAdmin{
+        max-width: 280px;
+        width: 100% !important;
+    }
+}
+
 @media (max-width: 1024px){
     .perfis{
         margin-left: 30%;
@@ -109,20 +119,17 @@ flex-direction: column;
         margin-left: 24%;
         height: auto;
         margin-right: -5%;
-      }
-
-      .form h4{
+    }
+    .form h4{
         font-size: 1.5rem;
-      }
-
-      .form-group{
+    }
+    .form-group{
         margin-left: 5%;
         margin-right: -3%;
-      }
-
-      .file{
+    }
+    .file{
         margin-left: 5%;
-      }
+    }
 }
 
 @media (max-width: 882px){
@@ -130,15 +137,11 @@ flex-direction: column;
         margin-left: 35%;
         width: 65%;
     }
-    
     .modal-admin{
         max-width: 100%; 
         margin-top: 10% !important;
         margin-bottom: 5% !important;
         margin-left: 26%;
         height: auto;
-      }
-
-
-  
+    }
 }

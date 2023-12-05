@@ -178,7 +178,7 @@ export default function CrudEstoque(){
                     <p>Data de compra: {item.dataCompra}</p>
                     <p>Validade: {item.validade}</p>
                     <div className="btnEditarAccordion">
-                    <button className="btn btn-adicionar">Editar</button>
+                    <button className="btn btn-adicionar" onClick={() => openModalEdit(item)} >Editar</button>
                     </div>
                 </div>
             </div>
@@ -217,6 +217,21 @@ export default function CrudEstoque(){
         }
     };
 
+    const [isModalEditOpen, setIsModalEditOpen] = useState(false);
+    const [selectedItemToEdit, setSelectedItemToEdit] = useState(null);
+
+    const openModalEdit = (item) => {
+        setSelectedItemToEdit(item);
+        setIsModalEditOpen(true);
+    };
+    const closeModalEdit = () => {
+        setSelectedItemToEdit(null);
+        setIsModalEditOpen(false);
+    };
+    const handleEditSubmit = () => {
+        closeModalEdit();
+    };
+    
 
     return (
         <div>
@@ -278,6 +293,7 @@ export default function CrudEstoque(){
                         placeholder="Pesquisar..."
                         value={searchText}
                         onChange={(e) => setSearchText(e.target.value)}
+                        id="barraPesquisa"
                         />
                     </div>
                     <table className="table tableEstoque">
@@ -404,6 +420,62 @@ export default function CrudEstoque(){
                 <div className="btn-modalEstoque">
                                 <button onClick={closeModalAdd} className="btn btn-cadastrarEstoque">Adicionar</button>
                                 <button onClick={closeModalAdd} className="btn btn-cancelarEstoque">Cancelar</button>
+                </div>
+            </Modal>
+            <Modal
+                isOpen={isModalEditOpen}
+                onRequestClose={closeModalEdit}
+                id="modalEditItem"
+                contentLabel="Editar Item"
+                style={{
+                    overlay: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)', 
+                    },
+                    content: {
+                        top: '50%', 
+                        left: '50%', 
+                        transform: 'translate(-50%, -50%)', 
+                        backgroundColor: '#000',
+                        height: '80%',
+                        width: '35%',
+                    },
+                }}>
+                <button className="modal-close-button" onClick={closeModalEdit}> X </button>
+                <form className="estoqueAdd">
+                    <div className="form-group-estoque">
+                        <label>Nome:</label>
+                        <input className="inputEstoque" type="text" id="nome" name="nome" defaultValue={selectedItemToEdit ? selectedItemToEdit.nome : ""}/>
+                    </div>
+                    <div className="form-group-estoque">
+                        <label>Tipo:</label>
+                        <select id="grupoItem" name="grupoItem" defaultValue={selectedItemToEdit ? selectedItemToEdit.grupo : ""}>
+                            <option selected disabled>Escolha o grupo a qual o item pertence</option>
+                            <option value="Agulhas">Agulhas</option>
+                            <option value="Biqueiras">Biqueiras</option>
+                            <option value="Esterelizadores">Esterelizadores</option>
+                            <option value="Máquinas">Máquinas</option>
+                            <option value="Luvas">Luvas</option>
+                            <option value="Papel">Papel</option>
+                            <option value="Copos">Copos</option>
+                            <option value="Tintas">Tintas</option>
+                        </select>
+                    </div>
+                    <div className="form-group-estoque">
+                        <label>Quantidade:</label>
+                        <input className="inputEstoque" type="number" id="quantidade" name="quantidade" defaultValue={selectedItemToEdit ? selectedItemToEdit.quantidade : ""}/>
+                    </div>
+                    <div className="form-group-estoque">
+                        <label>Data de compra:</label>
+                        <input className="inputEstoque" type="date" id="dataCompra" name="compra" defaultValue={selectedItemToEdit ? selectedItemToEdit.dataCompra : ""}/>
+                    </div>
+                    <div className="form-group-estoque">
+                        <label>Data de validade:</label>
+                        <input className="inputEstoque" type="date" id="dataValidade" name="validade" defaultValue={selectedItemToEdit ? selectedItemToEdit.validade : ""}/>
+                    </div>
+                </form>
+                <div className="btn-modalEstoque">
+                                <button onClick={handleEditSubmit} className="btn btn-cadastrarEstoque">Adicionar</button>
+                                <button onClick={closeModalEdit} className="btn btn-cancelarEstoque">Cancelar</button>
                 </div>
             </Modal>
             </section>

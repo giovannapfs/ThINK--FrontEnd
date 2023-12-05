@@ -279,8 +279,8 @@ export default function CrudPortfolio() {
 
                             </div>
                         </div>
-                        <div className="btn-modal">
-                            <button onClick={closeModalEdit} className="btn btn-adicionar">Adicionar</button>
+                        <div className="btn-modalP">
+                            <button onClick={closeModalEdit} className="btn btn-adicionarADM">Adicionar</button>
                             <button onClick={closeModalEdit} className="btn btn-cancelarAdmin">Cancelar</button>
 
                         </div>
